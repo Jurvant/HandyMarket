@@ -1,8 +1,8 @@
 package ilya.pon.listing.service;
 
 import ilya.pon.listing.domain.Announcement;
-import ilya.pon.listing.dto.AnnouncementCreateDto;
-import ilya.pon.listing.mapper.AnnouncementCreateMapper;
+import ilya.pon.listing.dto.request.AnnouncementCreateDto;
+import ilya.pon.listing.mapper.request.AnnouncementCreateMapper;
 import ilya.pon.listing.repository.AnnouncementRepository;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -22,6 +22,6 @@ public class AnnouncementService {
     }
 
     public Announcement save(@NotNull @NotBlank AnnouncementCreateDto dto) {
-        return createMapper.toEntity(dto, categoryService);
+        return repo.save(createMapper.toEntity(dto, categoryService));
     }
 }

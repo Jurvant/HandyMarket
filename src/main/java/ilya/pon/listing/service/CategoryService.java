@@ -3,8 +3,12 @@ package ilya.pon.listing.service;
 import ilya.pon.listing.domain.Category;
 import ilya.pon.listing.repository.CategoryRepository;
 import jakarta.persistence.EntityNotFoundException;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.UUID;
 
 @Service
@@ -17,5 +21,13 @@ public class CategoryService {
 
     public Category findById(UUID categoryId) {
         return repo.findById(categoryId).orElseThrow(EntityNotFoundException::new);
+    }
+
+    public List<Category> saveAll(@NotEmpty @NotNull List<@NotNull Category> categories) {
+        return repo.saveAll(categories);
+    }
+
+    public boolean existsAny(){
+        return repo.existsAnyNative();
     }
 }

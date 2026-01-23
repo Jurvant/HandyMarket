@@ -2,7 +2,9 @@ package ilya.pon.listing.domain;
 
 import ilya.pon.listing.domain.additions.Status;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
@@ -12,10 +14,13 @@ import java.util.UUID;
 @Entity
 @Data
 @NoArgsConstructor
+@Table(name = "announcements")
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class Announcement {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     @Column(name = "announcement_id")
+    @EqualsAndHashCode.Exclude
     private UUID id;
 
     @Column(name = "user_id")
