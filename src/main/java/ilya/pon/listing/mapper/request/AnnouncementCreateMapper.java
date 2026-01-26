@@ -6,8 +6,6 @@ import ilya.pon.listing.dto.request.AnnouncementCreateDto;
 import ilya.pon.listing.service.CategoryService;
 import org.mapstruct.*;
 
-import java.util.UUID;
-
 @Mapper(componentModel = MappingConstants.ComponentModel.SPRING)
 public interface AnnouncementCreateMapper {
 
