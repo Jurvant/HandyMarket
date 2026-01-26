@@ -17,7 +17,7 @@ public class AnnouncementCreateDto {
     @NotNull
     @PositiveOrZero
     private BigDecimal price;
-    private UUID categoryId;
+    private String categoryId;
     @NotNull
     private UUID userId;
 }

@@ -10,6 +10,7 @@ import tools.jackson.databind.ObjectMapper;
 
 import java.io.InputStream;
 import java.util.List;
+
 @Component
 public class CategoriesPusher {
     private final CategoryService categoryService;

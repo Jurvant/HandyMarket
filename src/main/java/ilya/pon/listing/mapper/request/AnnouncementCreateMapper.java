@@ -15,7 +15,7 @@ public interface AnnouncementCreateMapper {
     Announcement toEntity(AnnouncementCreateDto dto, @Context CategoryService service);
 
     @Named("getCategory")
-    default Category getCategory(@Context CategoryService service, UUID categoryId){
+    default Category getCategory(@Context CategoryService service, String categoryId){
         return service.findById(categoryId);
     }
 }

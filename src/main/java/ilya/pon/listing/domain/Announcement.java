@@ -2,7 +2,6 @@ package ilya.pon.listing.domain;
 
 import ilya.pon.listing.domain.additions.Status;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
