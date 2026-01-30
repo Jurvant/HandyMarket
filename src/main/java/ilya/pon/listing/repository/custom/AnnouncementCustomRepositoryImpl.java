@@ -14,6 +14,7 @@ import org.springframework.stereotype.Repository;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Objects;
 import java.util.UUID;
 
 import static ilya.pon.listing.domain.QAnnouncement.announcement;
@@ -50,11 +51,13 @@ public class AnnouncementCustomRepositoryImpl implements AnnouncementCustomRepos
                 .limit(pageable.getPageSize())
                 .fetch();
 
-        long total = queryFactory
-                .selectFrom(announcement)
+        Long totalCount = queryFactory
+                .select(announcement.count())
+                .from(announcement)
                 .where(predicate)
-                .fetchCount();
+                .fetchOne();
 
+        long total = totalCount != null ? totalCount : 0L;
         return new PageImpl<>(results, pageable, total);
     }
 
@@ -77,11 +80,13 @@ public class AnnouncementCustomRepositoryImpl implements AnnouncementCustomRepos
 
         List<Announcement> content = query.fetch();
 
-        long total = queryFactory
-                .selectFrom(announcement)
+        Long totalCount = queryFactory
+                .select(announcement.count())
+                .from(announcement)
                 .where(predicate)
-                .fetchCount();
+                .fetchOne();
 
+        long total = totalCount != null ? totalCount : 0L;
         return new PageImpl<>(content, pageable, total);
     }
 }

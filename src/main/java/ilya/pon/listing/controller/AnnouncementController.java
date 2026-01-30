@@ -60,7 +60,7 @@ public class AnnouncementController {
 
     @PutMapping("announcement/{id}")
     public Announcement update(@RequestBody AnnouncementUpdateDto dto, @PathVariable UUID id, @RequestHeader("X-User-Id") UUID userId){
-        return null;
+        return service.update(dto, id, userId);
     }
 
     @GetMapping("announcement/my")
