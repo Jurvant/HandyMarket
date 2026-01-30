@@ -23,7 +23,6 @@ public class CategoriesPusher {
     public void readAndPush(){
         InputStream is = getClass().getClassLoader()
                 .getResourceAsStream("db/files/categories.json");
-
         if (is == null) {
             throw new RuntimeException("No category file in resources/db/files");
         }

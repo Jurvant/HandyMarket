@@ -1,6 +1,7 @@
 package ilya.pon.listing.repository.custom;
 
 import com.querydsl.core.BooleanBuilder;
+import com.querydsl.jpa.impl.JPAQuery;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import ilya.pon.listing.domain.Announcement;
 import ilya.pon.listing.domain.Category;
@@ -55,5 +56,32 @@ public class AnnouncementCustomRepositoryImpl implements AnnouncementCustomRepos
                 .fetchCount();
 
         return new PageImpl<>(results, pageable, total);
+    }
+
+    @Override
+    public Page<Announcement> search(String text, Pageable pageable) {
+        BooleanBuilder predicate = new BooleanBuilder();
+
+        for (String p : text.trim().split("\\s+")) {
+            if (!p.isBlank()) {
+                predicate.and(announcement.title.containsIgnoreCase(p)
+                        .or(announcement.description.containsIgnoreCase(p)));
+            }
+        }
+
+        JPAQuery<Announcement> query = queryFactory
+                .selectFrom(announcement)
+                .where(predicate)
+                .offset(pageable.getOffset())
+                .limit(pageable.getPageSize());
+
+        List<Announcement> content = query.fetch();
+
+        long total = queryFactory
+                .selectFrom(announcement)
+                .where(predicate)
+                .fetchCount();
+
+        return new PageImpl<>(content, pageable, total);
     }
 }
