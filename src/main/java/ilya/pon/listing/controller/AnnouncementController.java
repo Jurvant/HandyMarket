@@ -5,7 +5,6 @@ import ilya.pon.listing.dto.request.AnnouncementCreateDto;
 import ilya.pon.listing.dto.request.AnnouncementFilterDto;
 import ilya.pon.listing.dto.request.AnnouncementUpdateDto;
 import ilya.pon.listing.service.AnnouncementService;
-import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;

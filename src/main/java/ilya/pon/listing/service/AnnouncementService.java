@@ -1,15 +1,14 @@
 package ilya.pon.listing.service;
 
-import ilya.pon.listing.exception.NoAccesToChangeDataException;
 import ilya.pon.listing.domain.Announcement;
 import ilya.pon.listing.domain.additions.Status;
 import ilya.pon.listing.dto.request.AnnouncementCreateDto;
 import ilya.pon.listing.dto.request.AnnouncementFilterDto;
 import ilya.pon.listing.dto.request.AnnouncementUpdateDto;
+import ilya.pon.listing.exception.NoAccesToChangeDataException;
 import ilya.pon.listing.mapper.request.AnnouncementRequestMapper;
 import ilya.pon.listing.repository.AnnouncementRepository;
 import ilya.pon.listing.repository.custom.AnnouncementCustomRepository;
-import jakarta.persistence.EntityExistsException;
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
