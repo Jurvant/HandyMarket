@@ -1,4 +1,4 @@
-package ilya.pon.listing.custom.exception;
+package ilya.pon.listing.exception;
 
 public class NoAccesToChangeDataException extends RuntimeException {
     public NoAccesToChangeDataException(String message) {
