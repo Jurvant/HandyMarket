@@ -1,6 +1,6 @@
 package ilya.pon.listing.service;
 
-import ilya.pon.listing.custom.exception.NoAccesToChangeDataException;
+import ilya.pon.listing.exception.NoAccesToChangeDataException;
 import ilya.pon.listing.domain.Announcement;
 import ilya.pon.listing.domain.additions.Status;
 import ilya.pon.listing.dto.request.AnnouncementCreateDto;
@@ -10,6 +10,7 @@ import ilya.pon.listing.mapper.request.AnnouncementRequestMapper;
 import ilya.pon.listing.repository.AnnouncementRepository;
 import ilya.pon.listing.repository.custom.AnnouncementCustomRepository;
 import jakarta.persistence.EntityExistsException;
+import jakarta.persistence.EntityNotFoundException;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import org.springframework.data.domain.Page;
@@ -38,7 +39,7 @@ public class AnnouncementService {
     }
 
     public Announcement findById(@NotNull @NotBlank UUID id) {
-        return repo.findById(id).orElseThrow(EntityExistsException::new);
+        return repo.findById(id).orElseThrow(EntityNotFoundException::new);
     }
 
     public void deactivateAnouncement(@NotNull UUID announcementId,@NotNull @NotBlank UUID userId) {

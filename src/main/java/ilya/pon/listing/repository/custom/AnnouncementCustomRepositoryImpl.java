@@ -14,7 +14,6 @@ import org.springframework.stereotype.Repository;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.List;
-import java.util.Objects;
 import java.util.UUID;
 
 import static ilya.pon.listing.domain.QAnnouncement.announcement;
