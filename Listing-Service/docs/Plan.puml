@@ -1,0 +1,21 @@
+@startuml
+
+class Announcement{
+    -UUID id
+    -String title
+    -String description
+    -UUID userId
+    -BigDecimal price
+    -LocalDateTime createdAt
+    -Status status
+    -Category categoryId
+}
+class Category{
+    -UUID id
+    -UUID parentId
+    -String name
+    -List<Announcement> announcements
+
+}
+
+@enduml

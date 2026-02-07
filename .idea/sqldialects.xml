@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SqlDialectMappings">
+    <file url="file://$PROJECT_DIR$/Listing-Service/src/main/java/ilya/pon/listing/repository/CategoryRepository.java" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/Listing-Service/src/main/resources/db/migration/V1__initial.SQL" dialect="PostgreSQL" />
+  </component>
+</project>

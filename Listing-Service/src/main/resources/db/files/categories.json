@@ -1,0 +1,342 @@
+[
+  {
+    "category_id": "ZRgPP9dBMm",
+    "parent_id": null,
+    "category_name": "Clothing"
+  },
+  {
+    "category_id": "cptB1C1NSL",
+    "parent_id": "ZRgPP9dBMm",
+    "category_name": "Men"
+  },
+  {
+    "category_id": "ElhqsRZDnP",
+    "parent_id": "cptB1C1NSL",
+    "category_name": "Outerwear"
+  },
+  {
+    "category_id": "LUzyWMYJpW",
+    "parent_id": "ElhqsRZDnP",
+    "category_name": "Jackets"
+  },
+  {
+    "category_id": "rDkHakOBKP",
+    "parent_id": "ElhqsRZDnP",
+    "category_name": "Coats"
+  },
+  {
+    "category_id": "1JARpJ2AUB",
+    "parent_id": "ElhqsRZDnP",
+    "category_name": "Windbreakers"
+  },
+  {
+    "category_id": "7G1VT2pSNO",
+    "parent_id": "cptB1C1NSL",
+    "category_name": "T-shirts & Shirts"
+  },
+  {
+    "category_id": "4q7L9FAU2S",
+    "parent_id": "7G1VT2pSNO",
+    "category_name": "T-shirts"
+  },
+  {
+    "category_id": "jpOC5zs3jx",
+    "parent_id": "7G1VT2pSNO",
+    "category_name": "Shirts"
+  },
+  {
+    "category_id": "96llWfTOAe",
+    "parent_id": "7G1VT2pSNO",
+    "category_name": "Polo shirts"
+  },
+  {
+    "category_id": "5OEvsF1R9k",
+    "parent_id": "cptB1C1NSL",
+    "category_name": "Pants & Jeans"
+  },
+  {
+    "category_id": "LNq3duGh9z",
+    "parent_id": "5OEvsF1R9k",
+    "category_name": "Jeans"
+  },
+  {
+    "category_id": "FThs77Cddn",
+    "parent_id": "5OEvsF1R9k",
+    "category_name": "Sweatpants"
+  },
+  {
+    "category_id": "t9eGFMIk7E",
+    "parent_id": "5OEvsF1R9k",
+    "category_name": "Dress pants"
+  },
+  {
+    "category_id": "cWQjuYWwc2",
+    "parent_id": "cptB1C1NSL",
+    "category_name": "Shoes"
+  },
+  {
+    "category_id": "2lYY81jKzR",
+    "parent_id": "cWQjuYWwc2",
+    "category_name": "Sneakers"
+  },
+  {
+    "category_id": "qGDd5H3yYd",
+    "parent_id": "cWQjuYWwc2",
+    "category_name": "Dress shoes"
+  },
+  {
+    "category_id": "ALbinxfzM1",
+    "parent_id": "cWQjuYWwc2",
+    "category_name": "Boots"
+  },
+  {
+    "category_id": "9eRGwnViia",
+    "parent_id": "cptB1C1NSL",
+    "category_name": "Accessories"
+  },
+  {
+    "category_id": "kAgBF7aSaO",
+    "parent_id": "9eRGwnViia",
+    "category_name": "Belts"
+  },
+  {
+    "category_id": "ygsDiv3hRm",
+    "parent_id": "9eRGwnViia",
+    "category_name": "Hats"
+  },
+  {
+    "category_id": "92pfQo6pA4",
+    "parent_id": "9eRGwnViia",
+    "category_name": "Scarves"
+  },
+  {
+    "category_id": "VfXndYon3e",
+    "parent_id": null,
+    "category_name": "Kids’ Products"
+  },
+  {
+    "category_id": "grl6dVnzM9",
+    "parent_id": "VfXndYon3e",
+    "category_name": "Toys"
+  },
+  {
+    "category_id": "QrYfmqcnAR",
+    "parent_id": "grl6dVnzM9",
+    "category_name": "Educational"
+  },
+  {
+    "category_id": "hSaQDQkkE0",
+    "parent_id": "QrYfmqcnAR",
+    "category_name": "Building blocks"
+  },
+  {
+    "category_id": "rSQyj88Pwe",
+    "parent_id": "QrYfmqcnAR",
+    "category_name": "Puzzles"
+  },
+  {
+    "category_id": "kkcmfophql",
+    "parent_id": "QrYfmqcnAR",
+    "category_name": "Learning games"
+  },
+  {
+    "category_id": "V1F5kE5svr",
+    "parent_id": "ZRgPP9dBMm",
+    "category_name": "Women"
+  },
+  {
+    "category_id": "bW6jRQ3h2S",
+    "parent_id": "V1F5kE5svr",
+    "category_name": "Dresses & Skirts"
+  },
+  {
+    "category_id": "6YcNNwgY0C",
+    "parent_id": "bW6jRQ3h2S",
+    "category_name": "Casual dresses"
+  },
+  {
+    "category_id": "dxs3ayh6Yl",
+    "parent_id": "bW6jRQ3h2S",
+    "category_name": "Evening dresses"
+  },
+  {
+    "category_id": "yZUeGC1bOn",
+    "parent_id": "bW6jRQ3h2S",
+    "category_name": "Skirts"
+  },
+  {
+    "category_id": "JyMpQJbCvy",
+    "parent_id": "V1F5kE5svr",
+    "category_name": "Blouses & Tops"
+  },
+  {
+    "category_id": "VT4rtTsGBj",
+    "parent_id": "JyMpQJbCvy",
+    "category_name": "Blouses"
+  },
+  {
+    "category_id": "vRQFNeVlsa",
+    "parent_id": "JyMpQJbCvy",
+    "category_name": "Tops"
+  },
+  {
+    "category_id": "OHHuEGKsUC",
+    "parent_id": "JyMpQJbCvy",
+    "category_name": "Shirts"
+  },
+  {
+    "category_id": "vu2lCeXKzk",
+    "parent_id": "V1F5kE5svr",
+    "category_name": "Pants & Leggings"
+  },
+  {
+    "category_id": "rg8LbH5ixZ",
+    "parent_id": "vu2lCeXKzk",
+    "category_name": "Dress pants"
+  },
+  {
+    "category_id": "ifEdBTIVDH",
+    "parent_id": "vu2lCeXKzk",
+    "category_name": "Leggings"
+  },
+  {
+    "category_id": "4J2BvKonKq",
+    "parent_id": "vu2lCeXKzk",
+    "category_name": "Jeans"
+  },
+  {
+    "category_id": "PlNwrAm6eM",
+    "parent_id": "VfXndYon3e",
+    "category_name": "Soft toys"
+  },
+  {
+    "category_id": "VK6hmDAvqP",
+    "parent_id": "PlNwrAm6eM",
+    "category_name": "Plush animals"
+  },
+  {
+    "category_id": "vidGAd8cIJ",
+    "parent_id": "PlNwrAm6eM",
+    "category_name": "Dolls"
+  },
+  {
+    "category_id": "NHWgNGSFB7",
+    "parent_id": "VfXndYon3e",
+    "category_name": "Electronic toys"
+  },
+  {
+    "category_id": "MTvnyKqtYJ",
+    "parent_id": "NHWgNGSFB7",
+    "category_name": "Robots"
+  },
+  {
+    "category_id": "wTXL9Ze5eF",
+    "parent_id": "NHWgNGSFB7",
+    "category_name": "Battery-powered cars"
+  },
+  {
+    "category_id": "SCG7WEYdG1",
+    "parent_id": "V1F5kE5svr",
+    "category_name": "Shoes"
+  },
+  {
+    "category_id": "cKnegrw5AO",
+    "parent_id": "SCG7WEYdG1",
+    "category_name": "Ankle boots"
+  },
+  {
+    "category_id": "smKxD5m9KI",
+    "parent_id": "SCG7WEYdG1",
+    "category_name": "Dress shoes"
+  },
+  {
+    "category_id": "ED6o8Zffqs",
+    "parent_id": "SCG7WEYdG1",
+    "category_name": "Sneakers"
+  },
+  {
+    "category_id": "2ZCPYTGxDj",
+    "parent_id": "V1F5kE5svr",
+    "category_name": "Accessories"
+  },
+  {
+    "category_id": "fZGBnnMx4e",
+    "parent_id": "2ZCPYTGxDj",
+    "category_name": "Bags"
+  },
+  {
+    "category_id": "6qsEYBv6eW",
+    "parent_id": "2ZCPYTGxDj",
+    "category_name": "Jewelry"
+  },
+  {
+    "category_id": "4lZKmYPbMk",
+    "parent_id": "2ZCPYTGxDj",
+    "category_name": "Scarves"
+  },
+  {
+    "category_id": "9BdK0PtwKc",
+    "parent_id": "VfXndYon3e",
+    "category_name": "Clothing"
+  },
+  {
+    "category_id": "H1THLG6H1Z",
+    "parent_id": "9BdK0PtwKc",
+    "category_name": "Boys"
+  },
+  {
+    "category_id": "XtDg7lwyJT",
+    "parent_id": "H1THLG6H1Z",
+    "category_name": "T-shirts"
+  },
+  {
+    "category_id": "KE29kkqLX6",
+    "parent_id": "H1THLG6H1Z",
+    "category_name": "Pants"
+  },
+  {
+    "category_id": "70EmSYGau7",
+    "parent_id": "H1THLG6H1Z",
+    "category_name": "Jackets"
+  },
+  {
+    "category_id": "YZj6RLht79",
+    "parent_id": "9BdK0PtwKc",
+    "category_name": "Girls"
+  },
+  {
+    "category_id": "3phIrCVLh7",
+    "parent_id": "YZj6RLht79",
+    "category_name": "Dresses"
+  },
+  {
+    "category_id": "i6jT5ByjBF",
+    "parent_id": "YZj6RLht79",
+    "category_name": "Skirts"
+  },
+  {
+    "category_id": "RHD7qDmzgU",
+    "parent_id": "YZj6RLht79",
+    "category_name": "Blouses"
+  },
+  {
+    "category_id": "pJCLIx2r8E",
+    "parent_id": "VfXndYon3e",
+    "category_name": "Strollers & Accessories"
+  },
+  {
+    "category_id": "8kzM0APnBF",
+    "parent_id": "pJCLIx2r8E",
+    "category_name": "Strollers"
+  },
+  {
+    "category_id": "1AV4avrH6j",
+    "parent_id": "pJCLIx2r8E",
+    "category_name": "Slings & Carriers"
+  },
+  {
+    "category_id": "dow9fD3WF6",
+    "parent_id": "pJCLIx2r8E",
+    "category_name": "Covers & Rain protection"
+  }
+]
