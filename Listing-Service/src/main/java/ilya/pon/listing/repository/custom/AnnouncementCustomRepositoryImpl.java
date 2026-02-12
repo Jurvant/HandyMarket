@@ -28,13 +28,12 @@ public class AnnouncementCustomRepositoryImpl implements AnnouncementCustomRepos
 
     @Override
     public Page<Announcement> findByParameters(
-            UUID id, UUID userId, String title, String description,
+            UUID userId, String title, String description,
             BigDecimal price, Status status, Category category,
             LocalDateTime createdAt, Pageable pageable) {
 
         BooleanBuilder predicate = new BooleanBuilder();
 
-        if (id != null) predicate.and(announcement.id.eq(id));
         if (userId != null) predicate.and(announcement.userId.eq(userId));
         if (title != null) predicate.and(announcement.title.containsIgnoreCase(title));
         if (description != null) predicate.and(announcement.description.containsIgnoreCase(description));

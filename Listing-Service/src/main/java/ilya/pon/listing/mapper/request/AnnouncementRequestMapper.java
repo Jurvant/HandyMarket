@@ -25,5 +25,6 @@ public interface AnnouncementRequestMapper {
         Optional.ofNullable(dto.getDescription()).ifPresent(announcement::setDescription);
         Optional.ofNullable(dto.getPrice()).ifPresent(announcement::setPrice);
         Optional.ofNullable(dto.getCategory()).ifPresent(announcement::setCategory);
+        Optional.ofNullable(dto.getStatus()).ifPresent(announcement::setStatus);
     }
 }

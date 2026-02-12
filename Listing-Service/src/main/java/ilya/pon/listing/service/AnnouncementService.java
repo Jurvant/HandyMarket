@@ -41,27 +41,8 @@ public class AnnouncementService {
         return repo.findById(id).orElseThrow(EntityNotFoundException::new);
     }
 
-    public void deactivateAnouncement(@NotNull UUID announcementId,@NotNull @NotBlank UUID userId) {
-        Announcement announcement = findById(announcementId);
-        if(userId.equals(announcement.getUserId())) {
-            announcement.setStatus(Status.DEACTIVATED);
-            repo.save(announcement);
-        }else{
-            throw new NoAccesToChangeDataException("User is not allowed to deactivate this announcement");
-        }
-    }
-    public void activateAnouncement(@NotNull UUID announcementId,@NotNull @NotBlank UUID userId) {
-        Announcement announcement = findById(announcementId);
-        if(userId.equals(announcement.getUserId())) {
-            announcement.setStatus(Status.ACTIVE);
-            repo.save(announcement);
-        }else{
-            throw new NoAccesToChangeDataException("User is not allowed to activate this announcement");
-        }
-    }
-
     public Page<Announcement> findByParameters(AnnouncementFilterDto dto, Pageable pageable){
-        return customRepository.findByParameters(dto.getId(), dto.getUserId(),
+        return customRepository.findByParameters(dto.getUserId(),
                 dto.getTitle(),dto.getDescription(), dto.getPrice(), dto.getStatus(),
                 dto.getCategory(), dto.getCreatedAt(), pageable);
     }

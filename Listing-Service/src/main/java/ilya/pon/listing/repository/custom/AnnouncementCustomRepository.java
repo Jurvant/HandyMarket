@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 import java.util.UUID;
 
 public interface AnnouncementCustomRepository {
-    Page<Announcement> findByParameters(UUID id, UUID userId, String title, String description, BigDecimal price,
+    Page<Announcement> findByParameters(UUID userId, String title, String description, BigDecimal price,
                                         Status status, Category category, LocalDateTime createdAt, Pageable pageable);
     Page<Announcement> search(String text, Pageable pageable);
 }

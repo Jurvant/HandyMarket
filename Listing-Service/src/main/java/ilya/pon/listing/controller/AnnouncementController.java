@@ -32,7 +32,7 @@ public class AnnouncementController {
                             schema = @Schema(implementation = Announcement.class))}),
             @ApiResponse(responseCode = "400", description = "Invalid parameters supplied",
                     content = @Content)})
-    @GetMapping("announcement")
+    @GetMapping("/announcement")
     public Page<Announcement> findByParameters(AnnouncementFilterDto dto, Pageable pageable) {
         return service.findByParameters(dto, pageable);
     }
@@ -71,7 +71,7 @@ public class AnnouncementController {
             @ApiResponse(responseCode = "400", description = "Invalid parameters supplied"),
             @ApiResponse(responseCode = "404", description = "Announcement not found")
     })
-    @GetMapping("announcement/{id}")
+    @GetMapping("/announcement/{id}")
     public Announcement findById(@PathVariable UUID id) {
         return service.findById(id);
     }
@@ -85,35 +85,9 @@ public class AnnouncementController {
             @ApiResponse(responseCode = "403", description = "Access denied"),
             @ApiResponse(responseCode = "404", description = "Announcement not found")
     })
-    @PutMapping("announcement/{id}")
+    @PutMapping("/announcement/{id}")
     public Announcement update(@RequestBody AnnouncementUpdateDto dto, @PathVariable UUID id, @RequestHeader("X-User-Id") UUID userId) {
         return service.update(dto, id, userId);
-    }
-
-    @Operation(summary = "Deactivate a announcement")
-    @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Announcement deactivated",
-                    content = {@Content(mediaType = "application/json",
-                            schema = @Schema(implementation = Announcement.class))}),
-            @ApiResponse(responseCode = "400", description = "Invalid parameters supplied"),
-            @ApiResponse(responseCode = "403", description = "Access denied")
-    })
-    @PostMapping("announcement/{id}/deactivate")
-    public void deactivateAnnouncement(@RequestHeader("X-User-Id") UUID userId, @PathVariable UUID id) {
-        service.deactivateAnouncement(id, userId);
-    }
-
-    @Operation(summary = "Activate a announcement")
-    @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Announcement activated",
-                    content = {@Content(mediaType = "application/json",
-                            schema = @Schema(implementation = Announcement.class))}),
-            @ApiResponse(responseCode = "400", description = "Invalid parameters supplied"),
-            @ApiResponse(responseCode = "403", description = "Access denied")
-    })
-    @PostMapping("announcement/{id}/activate")
-    public void activateAnnouncement(@RequestHeader("X-User-Id") UUID userId, @PathVariable UUID id) {
-        service.activateAnouncement(id, userId);
     }
 
     @Operation(summary = "Search for announcements by name and description")
@@ -123,7 +97,7 @@ public class AnnouncementController {
                             schema = @Schema(implementation = Announcement.class))}),
             @ApiResponse(responseCode = "400", description = "Invalid parameters supplied")
     })
-    @GetMapping("announcement/search")
+    @GetMapping("/announcement/search")
     public Page<Announcement> search(String parameter, Pageable pageable) {
         return service.search(parameter, pageable);
     }
@@ -135,7 +109,7 @@ public class AnnouncementController {
                             schema = @Schema(implementation = Announcement.class))}),
             @ApiResponse(responseCode = "400", description = "Invalid parameters supplied")
     })
-    @GetMapping("announcement/user")
+    @GetMapping("/announcement/user")
     public Page<Announcement> myAnnouncement(@RequestHeader("X-User-Id") UUID userId, Pageable pageable) {
         return service.findByUserId(userId, pageable);
     }
