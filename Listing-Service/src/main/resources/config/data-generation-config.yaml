@@ -1,0 +1,3 @@
+app:
+  listing-service:
+    categories-path: "db/files/categories.json"

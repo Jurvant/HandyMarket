@@ -45,9 +45,7 @@ class AnnouncementServiceTest {
         announcement.setId(announceId);
         when(repo.findById(announceId)).thenReturn(Optional.of(announcement));
 
-        assertThrows(NoAccesToChangeDataException.class, () -> {
-            service.deleteById(announceId, fakeId);
-        });
+        assertThrows(NoAccesToChangeDataException.class, () -> service.deleteById(announceId, fakeId));
     }
 
     @Test
@@ -74,9 +72,8 @@ class AnnouncementServiceTest {
         announcement.setId(announceId);
         when(repo.findById(announceId)).thenReturn(Optional.of(announcement));
 
-        assertThrows(NoAccesToChangeDataException.class, () -> {
-            service.update(new AnnouncementUpdateDto(), announceId, fakeId);
-        });
+        assertThrows(NoAccesToChangeDataException.class, () ->
+                service.update(new AnnouncementUpdateDto(), announceId, fakeId));
     }
 
     @Test
