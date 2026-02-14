@@ -1,0 +1,19 @@
+spring:
+  security:
+    oauth2:
+      resource-server:
+        jwt:
+          issuer-uri: http://localhost:9090/realms/handy-market
+      client:
+        registration:
+          keycloak:
+            client-id: listing-service
+            client-secret: idtxfE44FprrV6szdSCcVjctfMzG1k6N
+            scope:
+              - openid
+              - profile
+              - email
+            authorization-grant-type: authorization_code
+        provider:
+          keycloak:
+            issuer-uri: http://localhost:9090/realms/handy-market

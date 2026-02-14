@@ -1,6 +1,6 @@
 package ilya.pon.listing.data.generation.category;
 
-import ilya.pon.listing.config.data.GenerationProperties;
+import ilya.pon.listing.config.properties.GenerationProperties;
 import ilya.pon.listing.domain.Category;
 import ilya.pon.listing.dto.initial.CategoryInitialDto;
 import ilya.pon.listing.mapper.initial.CategoryInitialMapper;

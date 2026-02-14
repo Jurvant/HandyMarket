@@ -1,4 +1,4 @@
-package ilya.pon.listing.config.data;
+package ilya.pon.listing.config.properties;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;

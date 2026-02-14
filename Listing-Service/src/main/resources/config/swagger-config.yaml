@@ -1,0 +1,7 @@
+open-api:
+  config:
+    url:
+      server: "http://localhost:8080"
+      title: "Listing-Service API"
+      description: "Managing announcements"
+      version: "V1"

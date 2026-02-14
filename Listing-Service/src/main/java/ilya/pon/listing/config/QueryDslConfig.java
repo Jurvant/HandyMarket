@@ -1,4 +1,4 @@
-package ilya.pon.listing.config.repository;
+package ilya.pon.listing.config;
 
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import jakarta.persistence.EntityManager;

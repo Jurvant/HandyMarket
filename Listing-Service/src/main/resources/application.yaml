@@ -2,3 +2,5 @@ spring:
   config:
     import:
       - classpath:config/data-generation-config.yaml
+      - classpath:config/auth-config.yaml
+      - classpath:config/swagger-config.yaml
