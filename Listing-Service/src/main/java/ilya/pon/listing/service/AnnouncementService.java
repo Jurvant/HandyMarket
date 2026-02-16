@@ -1,7 +1,6 @@
 package ilya.pon.listing.service;
 
 import ilya.pon.listing.domain.Announcement;
-import ilya.pon.listing.domain.additions.Status;
 import ilya.pon.listing.dto.request.AnnouncementCreateDto;
 import ilya.pon.listing.dto.request.AnnouncementFilterDto;
 import ilya.pon.listing.dto.request.AnnouncementUpdateDto;
@@ -14,8 +13,12 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.security.oauth2.core.OAuth2Error;
+import org.springframework.security.oauth2.jwt.Jwt;
+import org.springframework.security.oauth2.jwt.JwtValidationException;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.UUID;
 
 @Service
@@ -37,6 +40,14 @@ public class AnnouncementService {
         return repo.save(requestMapper.toEntity(dto, categoryService));
     }
 
+    public Announcement save(@NotNull @NotBlank AnnouncementCreateDto dto, @NotNull Jwt jwt) {
+        if(jwt.getSubject() == null){
+            throw new JwtValidationException("Invalid token", List.of(new OAuth2Error("invalid_token")));
+        }
+        dto.setUserId(UUID.fromString(jwt.getSubject()));
+        return repo.save(requestMapper.toEntity(dto, categoryService));
+    }
+
     public Announcement findById(@NotNull @NotBlank UUID id) {
         return repo.findById(id).orElseThrow(EntityNotFoundException::new);
     }
@@ -53,6 +64,16 @@ public class AnnouncementService {
             repo.deleteById(id);
         }else throw new NoAccesToChangeDataException("User is not allowed to delete this announcement");
     }
+    public void deleteById(@NotNull UUID id, @NotNull Jwt jwt) {
+        if(jwt.getSubject() == null){
+            throw new JwtValidationException("Invalid token", List.of(new OAuth2Error("invalid_token")));
+        }
+
+        Announcement announcement = findById(id);
+        if(announcement.getUserId().equals(UUID.fromString(jwt.getSubject()))) {
+            repo.deleteById(id);
+        }else throw new NoAccesToChangeDataException("User is not allowed to delete this announcement");
+    }
 
     public Page<Announcement> search(String text, Pageable pageable) {
         return customRepository.search(text, pageable);
@@ -61,6 +82,21 @@ public class AnnouncementService {
     public Announcement update(AnnouncementUpdateDto dto,  UUID id, UUID userId) {
         Announcement announcement = findById(id);
         if(!userId.equals(announcement.getUserId())) {
+            throw new NoAccesToChangeDataException("User is not allowed to update this announcement");
+        }
+        requestMapper.update(dto, announcement);
+        repo.save(announcement);
+        return announcement;
+    }
+
+    public Announcement update(AnnouncementUpdateDto dto,  UUID id, Jwt jwt) {
+        if(jwt.getSubject() == null){
+            throw new JwtValidationException("Invalid token", List.of(new OAuth2Error("invalid_token")));
+        }
+
+        Announcement announcement = findById(id);
+        UUID userID = UUID.fromString(jwt.getSubject());
+        if(!userID.equals(announcement.getUserId())) {
             throw new NoAccesToChangeDataException("User is not allowed to update this announcement");
         }
         requestMapper.update(dto, announcement);

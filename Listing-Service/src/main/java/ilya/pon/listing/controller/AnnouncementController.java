@@ -13,6 +13,8 @@ import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.oauth2.jwt.Jwt;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.UUID;
@@ -47,9 +49,8 @@ public class AnnouncementController {
                     content = @Content)})
     @PostMapping("/announcement/new")
     public Announcement createAnnouncement(
-            @RequestHeader("X-User-Id") UUID userId, @RequestBody AnnouncementCreateDto dto) {
-        dto.setUserId(userId);
-        return service.save(dto);
+            @AuthenticationPrincipal Jwt jwt, @RequestBody AnnouncementCreateDto dto) {
+        return service.save(dto, jwt);
     }
 
     @Operation(summary = "Delete a announcement")
@@ -60,8 +61,8 @@ public class AnnouncementController {
             @ApiResponse(responseCode = "403", description = "Access denied")
     })
     @DeleteMapping("/announcement/{id}")
-    public void deleteAnnouncement(@PathVariable UUID id, @RequestHeader("X-User-Id") UUID userId) {
-        service.deleteById(id, userId);
+    public void deleteAnnouncement(@AuthenticationPrincipal Jwt jwt, @PathVariable UUID id) {
+        service.deleteById(id, jwt);
     }
 
     @Operation(summary = "Get a announcement by its id")
@@ -87,8 +88,8 @@ public class AnnouncementController {
             @ApiResponse(responseCode = "404", description = "Announcement not found")
     })
     @PutMapping("/announcement/{id}")
-    public Announcement update(@RequestBody AnnouncementUpdateDto dto, @PathVariable UUID id, @RequestHeader("X-User-Id") UUID userId) {
-        return service.update(dto, id, userId);
+    public Announcement update(@AuthenticationPrincipal Jwt jwt, @RequestBody AnnouncementUpdateDto dto, @PathVariable UUID id) {
+        return service.update(dto, id, jwt);
     }
 
     @Operation(summary = "Search for announcements by name and description")
@@ -111,7 +112,7 @@ public class AnnouncementController {
             @ApiResponse(responseCode = "400", description = "Invalid parameters supplied")
     })
     @GetMapping("/announcement/user")
-    public Page<Announcement> myAnnouncement(@RequestHeader("X-User-Id") UUID userId, Pageable pageable) {
+    public Page<Announcement> userAnnouncement(@RequestHeader("X-User-Id") UUID userId, Pageable pageable) {
         return service.findByUserId(userId, pageable);
     }
 }
