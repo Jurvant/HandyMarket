@@ -175,15 +175,6 @@ class AnnouncementControllerTest {
 
     @Test
     void shouldFindByParameters() throws Exception {
-        AnnouncementFilterDto dto = new AnnouncementFilterDto(
-                UUID.randomUUID(),
-                "tittle",
-                null,
-                new BigDecimal(100),
-                null,
-                null,
-                null
-        );
         List<Announcement> announcements = List.of(
                 new Announcement(),
                 new Announcement(),
