@@ -46,7 +46,11 @@ public class AnnouncementController {
                     content = {@Content(mediaType = "application/json",
                             schema = @Schema(implementation = Announcement.class))}),
             @ApiResponse(responseCode = "400", description = "Invalid parameters supplied",
-                    content = @Content)})
+                    content = @Content),
+    @ApiResponse(responseCode = "405", description = "Method not allowed",
+                    content = @Content)}
+
+    )
     @PostMapping("/announcement/new")
     public Announcement createAnnouncement(
             @AuthenticationPrincipal Jwt jwt, @RequestBody AnnouncementCreateDto dto) {

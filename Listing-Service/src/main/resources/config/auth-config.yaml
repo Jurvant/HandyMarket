@@ -1,14 +1,15 @@
 spring:
   security:
     oauth2:
-      resource-server:
+      resourceserver:
         jwt:
           issuer-uri: http://localhost:9090/realms/handy-market
+          jwk-set-uri: http://host.docker.internal:9090/realms/handy-market/protocol/openid-connect/certs
       client:
         registration:
           keycloak:
             client-id: listing-service
-            client-secret: idtxfE44FprrV6szdSCcVjctfMzG1k6N
+            client-secret: nYM2Hs6O0BJVhWJ2viYoDoEVpXzqOyCn
             scope:
               - openid
               - profile
@@ -16,4 +17,5 @@ spring:
             authorization-grant-type: authorization_code
         provider:
           keycloak:
-            issuer-uri: http://localhost:9090/realms/handy-market
+            issuer-uri: http://host.docker.internal:9090/realms/handy-market
+            jwk-set-uri: http://host.docker.internal:9090/realms/handy-market/protocol/openid-connect/certs

@@ -46,7 +46,6 @@ services:
     networks:
       - application
 
-  # Listing service database
   listing-db:
     image: postgres:16-alpine
     container_name: listing-postgres
@@ -70,8 +69,15 @@ services:
     ports:
       - "8081:8080"
     environment:
-      SPRING_SECURITY_OAUTH2_CLIENT_PROVIDER_KEYCLOAK_ISSUER_URI: http://keycloak:8080/realms/handy-market
-      SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_ISSUER_URI: http://keycloak:8080/realms/handy-market
+      SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_ISSUER_URI: http://localhost:9090/realms/handy-market
+      SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_JWK_SET_URI: http://keycloak:8080/realms/handy-market/protocol/openid-connect/certs
+
+      SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_KEYCLOAK_CLIENT_ID: listing-service
+      SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_KEYCLOAK_CLIENT_SECRET: nYM2Hs6O0BJVhWJ2viYoDoEVpXzqOyCn
+      SPRING_SECURITY_OAUTH2_CLIENT_PROVIDER_KEYCLOAK_AUTHORIZATION_URI: http://localhost:9090/realms/handy-market/protocol/openid-connect/auth
+      SPRING_SECURITY_OAUTH2_CLIENT_PROVIDER_KEYCLOAK_TOKEN_URI: http://keycloak:8080/realms/handy-market/protocol/openid-connect/token
+      SPRING_SECURITY_OAUTH2_CLIENT_PROVIDER_KEYCLOAK_JWK_SET_URI: http://keycloak:8080/realms/handy-market/protocol/openid-connect/certs
+
       SPRING_DATASOURCE_URL: jdbc:postgresql://listing-db:5432/listing_db
       SPRING_DATASOURCE_USERNAME: user
       SPRING_DATASOURCE_PASSWORD: password
