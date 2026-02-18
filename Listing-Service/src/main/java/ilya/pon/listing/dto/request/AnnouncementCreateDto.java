@@ -9,17 +9,15 @@ import lombok.Data;
 import java.math.BigDecimal;
 import java.util.UUID;
 
-@Data
-@AllArgsConstructor
-public class AnnouncementCreateDto {
-    @NotNull
-    @NotBlank
-    private String title;
-    private String description;
-    @NotNull
-    @PositiveOrZero
-    private BigDecimal price;
-    private String categoryId;
-    @NotNull
-    private UUID userId;
-}
+public record AnnouncementCreateDto(
+        @NotNull
+        @NotBlank
+        String title,
+        String description,
+        @NotNull
+        @PositiveOrZero
+        BigDecimal price,
+        String categoryId,
+        @NotNull
+        UUID userId
+) { }

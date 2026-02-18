@@ -4,6 +4,7 @@ import ilya.pon.listing.domain.Announcement;
 import ilya.pon.listing.dto.request.AnnouncementCreateDto;
 import ilya.pon.listing.dto.request.AnnouncementFilterDto;
 import ilya.pon.listing.dto.request.AnnouncementUpdateDto;
+import ilya.pon.listing.dto.response.AnnouncementResponseDto;
 import ilya.pon.listing.service.AnnouncementService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -36,7 +37,7 @@ public class AnnouncementController {
             @ApiResponse(responseCode = "400", description = "Invalid parameters supplied",
                     content = @Content)})
     @GetMapping("/announcement")
-    public Page<Announcement> findByParameters(AnnouncementFilterDto dto, Pageable pageable) {
+    public Page<AnnouncementResponseDto> findByParameters(AnnouncementFilterDto dto, Pageable pageable) {
         return service.findByParameters(dto, pageable);
     }
 
@@ -52,7 +53,7 @@ public class AnnouncementController {
 
     )
     @PostMapping("/announcement/new")
-    public Announcement createAnnouncement(
+    public AnnouncementResponseDto createAnnouncement(
             @AuthenticationPrincipal Jwt jwt, @RequestBody AnnouncementCreateDto dto) {
         return service.save(dto, jwt);
     }
@@ -78,8 +79,8 @@ public class AnnouncementController {
             @ApiResponse(responseCode = "404", description = "Announcement not found")
     })
     @GetMapping("/announcement/{id}")
-    public Announcement findById(@PathVariable UUID id) {
-        return service.findById(id);
+    public AnnouncementResponseDto findById(@PathVariable UUID id) {
+        return service.findDtoById(id);
     }
 
     @Operation(summary = "Update a announcement")
@@ -92,7 +93,7 @@ public class AnnouncementController {
             @ApiResponse(responseCode = "404", description = "Announcement not found")
     })
     @PutMapping("/announcement/{id}")
-    public Announcement update(@AuthenticationPrincipal Jwt jwt, @RequestBody AnnouncementUpdateDto dto, @PathVariable UUID id) {
+    public AnnouncementResponseDto update(@AuthenticationPrincipal Jwt jwt, @RequestBody AnnouncementUpdateDto dto, @PathVariable UUID id) {
         return service.update(dto, id, jwt);
     }
 
@@ -104,7 +105,7 @@ public class AnnouncementController {
             @ApiResponse(responseCode = "400", description = "Invalid parameters supplied")
     })
     @GetMapping("/announcement/search")
-    public Page<Announcement> search(String parameter, Pageable pageable) {
+    public Page<AnnouncementResponseDto> search(String parameter, Pageable pageable) {
         return service.search(parameter, pageable);
     }
 
@@ -116,7 +117,7 @@ public class AnnouncementController {
             @ApiResponse(responseCode = "400", description = "Invalid parameters supplied")
     })
     @GetMapping("/announcement/user")
-    public Page<Announcement> userAnnouncement(@RequestHeader("X-User-Id") UUID userId, Pageable pageable) {
+    public Page<AnnouncementResponseDto> userAnnouncement(@RequestHeader("X-User-Id") UUID userId, Pageable pageable) {
         return service.findByUserId(userId, pageable);
     }
 }

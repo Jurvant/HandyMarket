@@ -8,12 +8,15 @@ import ilya.pon.listing.service.CategoryService;
 import org.mapstruct.*;
 
 import java.util.Optional;
+import java.util.UUID;
 
 @Mapper(componentModel = MappingConstants.ComponentModel.SPRING)
 public interface AnnouncementRequestMapper {
 
-    @Mapping(target = "category", source = "categoryId", qualifiedByName = "getCategory")
-    Announcement toEntity(AnnouncementCreateDto dto, @Context CategoryService service);
+    @Mapping(target = "category", source = "dto.categoryId", qualifiedByName = "getCategory")
+    @Mapping(target = "userId", source = "userId")
+    @Mapping(target = "id", ignore = true)
+    Announcement toEntity(AnnouncementCreateDto dto, UUID userId, @Context CategoryService service);
 
     @Named("getCategory")
     default Category getCategory(@Context CategoryService service, String categoryId){
