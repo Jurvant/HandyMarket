@@ -2,8 +2,10 @@ package ilya.pon.listing.service;
 
 import ilya.pon.listing.domain.Announcement;
 import ilya.pon.listing.dto.request.AnnouncementUpdateDto;
+import ilya.pon.listing.dto.response.AnnouncementResponseDto;
 import ilya.pon.listing.exception.NoAccesToChangeDataException;
 import ilya.pon.listing.mapper.request.AnnouncementRequestMapper;
+import ilya.pon.listing.mapper.response.AnnouncementResponseMapper;
 import ilya.pon.listing.repository.AnnouncementRepository;
 import ilya.pon.listing.repository.custom.AnnouncementCustomRepository;
 import org.junit.jupiter.api.Test;
@@ -11,6 +13,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.security.oauth2.jwt.Jwt;
 
 import java.util.Optional;
 import java.util.UUID;
@@ -35,17 +38,26 @@ class AnnouncementServiceTest {
     @Mock
     AnnouncementCustomRepository announcementCustomRepository;
 
+    @Mock
+    AnnouncementResponseMapper responseMapper;
+
     @Test
     void shouldNotPassVerification_in_deleteById(){
         UUID announceId = UUID.randomUUID();
         UUID originalId = UUID.randomUUID();
         UUID fakeId = UUID.randomUUID();
+
+        Jwt jwt = Jwt.withTokenValue("mock-token")
+                .header("alg", "none")
+                .claim("sub", fakeId.toString())
+                .build();
+
         Announcement announcement = new Announcement();
         announcement.setUserId(originalId);
         announcement.setId(announceId);
         when(repo.findById(announceId)).thenReturn(Optional.of(announcement));
 
-        assertThrows(NoAccesToChangeDataException.class, () -> service.deleteById(announceId, fakeId));
+        assertThrows(NoAccesToChangeDataException.class, () -> service.deleteById(announceId, jwt));
     }
 
     @Test
@@ -53,12 +65,17 @@ class AnnouncementServiceTest {
         UUID announceId = UUID.randomUUID();
         UUID userId = UUID.randomUUID();
 
+        Jwt jwt = Jwt.withTokenValue("mock-token")
+                .header("alg", "none")
+                .claim("sub", userId.toString())
+                .build();
+
         Announcement announcement = new Announcement();
         announcement.setUserId(userId);
         announcement.setId(announceId);
         when(repo.findById(announceId)).thenReturn(Optional.of(announcement));
 
-        service.deleteById(announceId, userId);
+        service.deleteById(announceId, jwt);
         verify(repo, times(1)).deleteById(announceId);
     }
 
@@ -81,13 +98,20 @@ class AnnouncementServiceTest {
         UUID announceId = UUID.randomUUID();
         UUID userId = UUID.randomUUID();
         AnnouncementUpdateDto dto = new AnnouncementUpdateDto();
+        AnnouncementResponseDto responseDto = null;
+
+        Jwt jwt = Jwt.withTokenValue("mock-token")
+                .header("alg", "none")
+                .claim("sub", userId.toString())
+                .build();
 
         Announcement announcement = new Announcement();
         announcement.setUserId(userId);
         announcement.setId(announceId);
         when(repo.findById(announceId)).thenReturn(Optional.of(announcement));
+        when(responseMapper.toDto(announcement)).thenReturn(responseDto);
 
-        service.update(dto, announceId, userId);
+        service.update(dto, announceId, jwt);
         verify(repo, times(1)).save(announcement);
         verify(requestMapper, times(1)).update(dto, announcement);
     }

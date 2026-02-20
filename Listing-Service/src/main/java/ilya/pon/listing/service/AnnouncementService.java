@@ -70,6 +70,7 @@ public class AnnouncementService {
             repo.deleteById(id);
         }else throw new NoAccesToChangeDataException("User is not allowed to delete this announcement");
     }
+
     public void deleteById(@NotNull UUID id, @NotNull Jwt jwt) {
         if(jwt.getSubject() == null){
             throw new JwtValidationException("Invalid token", List.of(new OAuth2Error("invalid_token")));
@@ -102,8 +103,8 @@ public class AnnouncementService {
         }
 
         Announcement announcement = findById(id);
-        UUID userID = UUID.fromString(jwt.getSubject());
-        if(!userID.equals(announcement.getUserId())) {
+        UUID userId = UUID.fromString(jwt.getSubject());
+        if(!userId.equals(announcement.getUserId())) {
             throw new NoAccesToChangeDataException("User is not allowed to update this announcement");
         }
         requestMapper.update(dto, announcement);
