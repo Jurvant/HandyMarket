@@ -64,13 +64,6 @@ public class AnnouncementService {
             return announcements.map(responseMapper::toDto);
     }
 
-    public void deleteById(@NotNull UUID id,@NotNull UUID userId) {
-        Announcement announcement = findById(id);
-        if(announcement.getUserId().equals(userId)) {
-            repo.deleteById(id);
-        }else throw new NoAccesToChangeDataException("User is not allowed to delete this announcement");
-    }
-
     public void deleteById(@NotNull UUID id, @NotNull Jwt jwt) {
         if(jwt.getSubject() == null){
             throw new JwtValidationException("Invalid token", List.of(new OAuth2Error("invalid_token")));
@@ -85,16 +78,6 @@ public class AnnouncementService {
     public Page<AnnouncementResponseDto> search(String text, Pageable pageable) {
 
         return customRepository.search(text, pageable).map(responseMapper::toDto);
-    }
-
-    public Announcement update(AnnouncementUpdateDto dto,  UUID id, UUID userId) {
-        Announcement announcement = findById(id);
-        if(!userId.equals(announcement.getUserId())) {
-            throw new NoAccesToChangeDataException("User is not allowed to update this announcement");
-        }
-        requestMapper.update(dto, announcement);
-        repo.save(announcement);
-        return announcement;
     }
 
     public AnnouncementResponseDto update(AnnouncementUpdateDto dto,  UUID id, Jwt jwt) {

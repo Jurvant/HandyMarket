@@ -84,13 +84,19 @@ class AnnouncementServiceTest {
         UUID announceId = UUID.randomUUID();
         UUID originalId = UUID.randomUUID();
         UUID fakeId = UUID.randomUUID();
+
+        Jwt jwt = Jwt.withTokenValue("mock-token")
+                .header("alg", "none")
+                .claim("sub", fakeId.toString())
+                .build();
+
         Announcement announcement = new Announcement();
         announcement.setUserId(originalId);
         announcement.setId(announceId);
         when(repo.findById(announceId)).thenReturn(Optional.of(announcement));
 
         assertThrows(NoAccesToChangeDataException.class, () ->
-                service.update(new AnnouncementUpdateDto(), announceId, fakeId));
+                service.update(new AnnouncementUpdateDto(), announceId, jwt));
     }
 
     @Test
