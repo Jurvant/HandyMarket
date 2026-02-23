@@ -90,7 +90,7 @@ class AnnouncementServiceTest {
         Announcement announcement = new Announcement();
         announcement.setUserId(originalId);
         announcement.setId(announceId);
-        when(repo.findByIdWithImages(announceId)).thenReturn(Optional.of(announcement));
+        when(repo.findWithImagesById(announceId)).thenReturn(Optional.of(announcement));
 
         assertThrows(NoAccesToChangeDataException.class, () ->
                 service.update(new UpdateAnnouncementImageDto(null, null), announceId, jwt));
@@ -112,7 +112,7 @@ class AnnouncementServiceTest {
         announcement.setImages(new ArrayList<>());
         announcement.setUserId(userId);
         announcement.setId(announceId);
-        when(repo.findByIdWithImages(announceId)).thenReturn(Optional.of(announcement));
+        when(repo.findWithImagesById(announceId)).thenReturn(Optional.of(announcement));
         when(mapper.toResponseDto(announcement)).thenReturn(responseDto);
 
         service.update(dto, announceId, jwt);

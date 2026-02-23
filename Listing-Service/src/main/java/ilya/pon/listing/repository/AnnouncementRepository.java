@@ -16,7 +16,7 @@ public interface AnnouncementRepository extends JpaRepository<Announcement, UUID
     Page<Announcement> findByUserId(UUID userId, Pageable pageable);
 
     @EntityGraph(attributePaths = {"images"})
-    Optional<Announcement> findByIdWithImages(UUID id);
+    Optional<Announcement> findWithImagesById(UUID id);
 
 
 }

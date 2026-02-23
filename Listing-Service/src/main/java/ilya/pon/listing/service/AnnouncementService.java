@@ -46,7 +46,7 @@ public class AnnouncementService {
 
     @Transactional(readOnly = true)
     public ResponseAnnouncementImageDto findDtoById(@NotNull @NotBlank UUID id) {
-        Announcement announcement = repo.findByIdWithImages(id)
+        Announcement announcement = repo.findWithImagesById(id)
                 .orElseThrow(EntityNotFoundException::new);
         return mapToResponseDto(announcement);
     }
@@ -78,7 +78,7 @@ public class AnnouncementService {
     @Transactional
     public ResponseAnnouncementImageDto update(@Valid UpdateAnnouncementImageDto dto, UUID id, Jwt jwt) {
         UUID userId = extractUserId(jwt);
-        Announcement announcement = repo.findByIdWithImages(id)
+        Announcement announcement = repo.findWithImagesById(id)
                 .orElseThrow(EntityNotFoundException::new);
 
         if (!userId.equals(announcement.getUserId())) {
