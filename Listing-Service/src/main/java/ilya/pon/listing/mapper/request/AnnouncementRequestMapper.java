@@ -15,7 +15,6 @@ public interface AnnouncementRequestMapper {
 
     @Mapping(target = "category", source = "dto.categoryId", qualifiedByName = "getCategory")
     @Mapping(target = "userId", source = "userId")
-    @Mapping(target = "id", ignore = true)
     Announcement toEntity(AnnouncementCreateDto dto, UUID userId, @Context CategoryService service);
 
     @Named("getCategory")

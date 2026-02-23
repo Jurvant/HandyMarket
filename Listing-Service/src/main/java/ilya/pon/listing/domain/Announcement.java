@@ -11,6 +11,7 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -18,6 +19,14 @@ import java.util.UUID;
 @NoArgsConstructor
 @Table(name = "announcements")
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
+@NamedEntityGraph(
+        name = "images-status-graph",
+        attributeNodes = {
+                @NamedAttributeNode("category"),
+                @NamedAttributeNode("status"),
+                @NamedAttributeNode("images")
+        }
+)
 @EntityListeners(AuditingEntityListener.class)
 public class Announcement {
     @Id
@@ -50,4 +59,17 @@ public class Announcement {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "category_id", referencedColumnName = "category_id")
     private Category category;
+
+    @OneToMany(mappedBy = "announcement", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+    private List<Image> images;
+
+    public void addImage(Image image) {
+        images.add(image);
+        image.setAnnouncement(this);
+    }
+
+    public void removeImage(Image image) {
+        images.remove(image);
+        image.setAnnouncement(null);
+    }
 }

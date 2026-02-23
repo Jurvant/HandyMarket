@@ -1,101 +1,122 @@
 package ilya.pon.listing.service;
 
 import ilya.pon.listing.domain.Announcement;
-import ilya.pon.listing.dto.request.AnnouncementCreateDto;
 import ilya.pon.listing.dto.request.AnnouncementFilterDto;
-import ilya.pon.listing.dto.request.AnnouncementUpdateDto;
-import ilya.pon.listing.dto.response.AnnouncementResponseDto;
+import ilya.pon.listing.dto.wrapper.CreateAnnounceImageDto;
+import ilya.pon.listing.dto.wrapper.ResponseAnnouncementImageDto;
+import ilya.pon.listing.dto.wrapper.UpdateAnnouncementImageDto;
 import ilya.pon.listing.exception.NoAccesToChangeDataException;
-import ilya.pon.listing.mapper.request.AnnouncementRequestMapper;
-import ilya.pon.listing.mapper.response.AnnouncementResponseMapper;
+import ilya.pon.listing.mapper.MapperMaster;
 import ilya.pon.listing.repository.AnnouncementRepository;
 import ilya.pon.listing.repository.custom.AnnouncementCustomRepository;
 import jakarta.persistence.EntityNotFoundException;
+import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import lombok.AllArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.security.oauth2.core.OAuth2Error;
 import org.springframework.security.oauth2.jwt.Jwt;
 import org.springframework.security.oauth2.jwt.JwtValidationException;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.UUID;
 
 @Service
+@AllArgsConstructor
 public class AnnouncementService {
     private final AnnouncementRepository repo;
-    private final AnnouncementRequestMapper requestMapper;
     private final CategoryService categoryService;
     private final AnnouncementCustomRepository customRepository;
-    private final AnnouncementResponseMapper responseMapper;
+    private final MapperMaster mapper;
 
-    public AnnouncementService(AnnouncementRepository repo, AnnouncementRequestMapper requestMapper,
-                               CategoryService categoryService, AnnouncementCustomRepository customRepository, AnnouncementResponseMapper responseMapper) {
-        this.repo = repo;
-        this.requestMapper = requestMapper;
-        this.categoryService = categoryService;
-        this.customRepository = customRepository;
-        this.responseMapper = responseMapper;
+    @Transactional
+    public ResponseAnnouncementImageDto save(@NotNull @NotBlank @Valid CreateAnnounceImageDto dto, @NotNull Jwt jwt) {
+        UUID userId = extractUserId(jwt);
+        Announcement announcement = mapper.toEntity(dto.announcementDto(), userId, categoryService);
+        if (dto.imageDto() != null) {
+            dto.imageDto().forEach(imageDto -> {
+                announcement.addImage(mapper.toEntity(imageDto));
+            });
+        }
+        Announcement savedAnnouncement = repo.save(announcement);
+        return mapToResponseDto(savedAnnouncement);
     }
 
-    public AnnouncementResponseDto save(@NotNull @NotBlank AnnouncementCreateDto dto, @NotNull Jwt jwt) {
-        if(jwt.getSubject() == null){
+    @Transactional(readOnly = true)
+    public ResponseAnnouncementImageDto findDtoById(@NotNull @NotBlank UUID id) {
+        Announcement announcement = repo.findByIdWithImages(id)
+                .orElseThrow(EntityNotFoundException::new);
+        return mapToResponseDto(announcement);
+    }
+
+    @Transactional(readOnly = true)
+    public Page<ResponseAnnouncementImageDto> findByParameters(AnnouncementFilterDto dto, Pageable pageable) {
+        Page<Announcement> announcements = customRepository.findByParameters(dto.getUserId(),
+                dto.getTitle(), dto.getDescription(), dto.getPrice(), dto.getStatus(),
+                dto.getCategory(), dto.getCreatedAt(), pageable);
+        return announcements.map(this::mapToResponseDto);
+    }
+
+    @Transactional
+    public void deleteById(@NotNull UUID id, @NotNull Jwt jwt) {
+        UUID userId = extractUserId(jwt);
+        Announcement announcement = findById(id);
+
+        if (!announcement.getUserId().equals(userId)) {
+            throw new NoAccesToChangeDataException("User is not allowed to delete this announcement");
+        }
+        repo.deleteById(id);
+    }
+
+    @Transactional(readOnly = true)
+    public Page<ResponseAnnouncementImageDto> search(String text, Pageable pageable) {
+        return customRepository.search(text, pageable).map(this::mapToResponseDto);
+    }
+
+    @Transactional
+    public ResponseAnnouncementImageDto update(@Valid UpdateAnnouncementImageDto dto, UUID id, Jwt jwt) {
+        UUID userId = extractUserId(jwt);
+        Announcement announcement = repo.findByIdWithImages(id)
+                .orElseThrow(EntityNotFoundException::new);
+
+        if (!userId.equals(announcement.getUserId())) {
+            throw new NoAccesToChangeDataException("User is not allowed to update this announcement");
+        }
+        mapper.update(dto.announcementDto(), announcement);
+        if (dto.imageDto() != null) {
+            announcement.getImages().clear();
+            dto.imageDto().forEach(imageDto -> {
+                announcement.addImage(mapper.toEntity(imageDto));
+            });
+        }
+        repo.save(announcement);
+        return mapToResponseDto(announcement);
+    }
+
+    @Transactional(readOnly = true)
+    public Page<ResponseAnnouncementImageDto> findByUserId(UUID userId, Pageable pageable) {
+        return repo.findByUserId(userId, pageable).map(this::mapToResponseDto);
+    }
+
+    private UUID extractUserId(Jwt jwt) {
+        if (jwt == null || jwt.getSubject() == null) {
             throw new JwtValidationException("Invalid token", List.of(new OAuth2Error("invalid_token")));
         }
-        Announcement announcement = repo.save(requestMapper.toEntity(dto, UUID.fromString(jwt.getSubject()), categoryService));
-        return responseMapper.toDto(announcement);
+        return UUID.fromString(jwt.getSubject());
     }
 
-    public Announcement findById(@NotNull @NotBlank UUID id) {
+    private Announcement findById(@NotNull @NotBlank UUID id) {
         return repo.findById(id).orElseThrow(EntityNotFoundException::new);
     }
 
-    public AnnouncementResponseDto findDtoById(@NotNull @NotBlank UUID id) {
-        Announcement announcement = repo.findById(id).orElseThrow(EntityNotFoundException::new);
-        return responseMapper.toDto(announcement);
-    }
-
-    public Page<AnnouncementResponseDto> findByParameters(AnnouncementFilterDto dto, Pageable pageable){
-            Page<Announcement> announcements = customRepository.findByParameters(dto.getUserId(),
-                dto.getTitle(),dto.getDescription(), dto.getPrice(), dto.getStatus(),
-                dto.getCategory(), dto.getCreatedAt(), pageable);
-            return announcements.map(responseMapper::toDto);
-    }
-
-    public void deleteById(@NotNull UUID id, @NotNull Jwt jwt) {
-        if(jwt.getSubject() == null){
-            throw new JwtValidationException("Invalid token", List.of(new OAuth2Error("invalid_token")));
-        }
-
-        Announcement announcement = findById(id);
-        if(announcement.getUserId().equals(UUID.fromString(jwt.getSubject()))) {
-            repo.deleteById(id);
-        }else throw new NoAccesToChangeDataException("User is not allowed to delete this announcement");
-    }
-
-    public Page<AnnouncementResponseDto> search(String text, Pageable pageable) {
-
-        return customRepository.search(text, pageable).map(responseMapper::toDto);
-    }
-
-    public AnnouncementResponseDto update(AnnouncementUpdateDto dto,  UUID id, Jwt jwt) {
-        if(jwt.getSubject() == null){
-            throw new JwtValidationException("Invalid token", List.of(new OAuth2Error("invalid_token")));
-        }
-
-        Announcement announcement = findById(id);
-        UUID userId = UUID.fromString(jwt.getSubject());
-        if(!userId.equals(announcement.getUserId())) {
-            throw new NoAccesToChangeDataException("User is not allowed to update this announcement");
-        }
-        requestMapper.update(dto, announcement);
-        repo.save(announcement);
-        return responseMapper.toDto(announcement);
-    }
-
-    public Page<AnnouncementResponseDto> findByUserId(UUID userId, Pageable pageable) {
-        return repo.findByUserId(userId, pageable).map(responseMapper::toDto);
+    private ResponseAnnouncementImageDto mapToResponseDto(Announcement announcement) {
+        return new ResponseAnnouncementImageDto(
+                mapper.toResponseDto(announcement),
+                announcement.getImages().stream().map(mapper::toResponseDto).toList()
+        );
     }
 }

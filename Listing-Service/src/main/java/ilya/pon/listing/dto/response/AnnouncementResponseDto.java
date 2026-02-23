@@ -13,4 +13,5 @@ public record AnnouncementResponseDto(
         LocalDateTime createdAt,
         String status,
         String categoryName
+
 ){ }
