@@ -38,9 +38,7 @@ public class AnnouncementService {
         UUID userId = extractUserId(jwt);
         Announcement announcement = mapper.toEntity(dto.announcementDto(), userId, categoryService);
         if (dto.imageDto() != null) {
-            dto.imageDto().forEach(imageDto -> {
-                announcement.addImage(mapper.toEntity(imageDto));
-            });
+            dto.imageDto().forEach(imageDto -> announcement.addImage(mapper.toEntity(imageDto)));
         }
         Announcement savedAnnouncement = repo.save(announcement);
         return mapToResponseDto(savedAnnouncement);
@@ -89,9 +87,7 @@ public class AnnouncementService {
         mapper.update(dto.announcementDto(), announcement);
         if (dto.imageDto() != null) {
             announcement.getImages().clear();
-            dto.imageDto().forEach(imageDto -> {
-                announcement.addImage(mapper.toEntity(imageDto));
-            });
+            dto.imageDto().forEach(imageDto -> announcement.addImage(mapper.toEntity(imageDto)));
         }
         repo.save(announcement);
         return mapToResponseDto(announcement);

@@ -1,11 +1,10 @@
 package ilya.pon.listing.service;
 
 import ilya.pon.listing.domain.Announcement;
-import ilya.pon.listing.dto.request.AnnouncementUpdateDto;
 import ilya.pon.listing.dto.response.AnnouncementResponseDto;
+import ilya.pon.listing.dto.wrapper.UpdateAnnouncementImageDto;
 import ilya.pon.listing.exception.NoAccesToChangeDataException;
-import ilya.pon.listing.mapper.request.AnnouncementRequestMapper;
-import ilya.pon.listing.mapper.response.AnnouncementResponseMapper;
+import ilya.pon.listing.mapper.MapperMaster;
 import ilya.pon.listing.repository.AnnouncementRepository;
 import ilya.pon.listing.repository.custom.AnnouncementCustomRepository;
 import org.junit.jupiter.api.Test;
@@ -15,6 +14,7 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.security.oauth2.jwt.Jwt;
 
+import java.util.ArrayList;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -30,16 +30,13 @@ class AnnouncementServiceTest {
     AnnouncementRepository repo;
 
     @Mock
-    AnnouncementRequestMapper requestMapper;
+    MapperMaster mapper;
 
     @Mock
     CategoryService categoryService;
 
     @Mock
     AnnouncementCustomRepository announcementCustomRepository;
-
-    @Mock
-    AnnouncementResponseMapper responseMapper;
 
     @Test
     void shouldNotPassVerification_in_deleteById(){
@@ -93,17 +90,17 @@ class AnnouncementServiceTest {
         Announcement announcement = new Announcement();
         announcement.setUserId(originalId);
         announcement.setId(announceId);
-        when(repo.findById(announceId)).thenReturn(Optional.of(announcement));
+        when(repo.findByIdWithImages(announceId)).thenReturn(Optional.of(announcement));
 
         assertThrows(NoAccesToChangeDataException.class, () ->
-                service.update(new AnnouncementUpdateDto(), announceId, jwt));
+                service.update(new UpdateAnnouncementImageDto(null, null), announceId, jwt));
     }
 
     @Test
     void shouldPassVerification_in_update(){
         UUID announceId = UUID.randomUUID();
         UUID userId = UUID.randomUUID();
-        AnnouncementUpdateDto dto = new AnnouncementUpdateDto();
+        UpdateAnnouncementImageDto dto = new UpdateAnnouncementImageDto(null, null);
         AnnouncementResponseDto responseDto = null;
 
         Jwt jwt = Jwt.withTokenValue("mock-token")
@@ -112,13 +109,13 @@ class AnnouncementServiceTest {
                 .build();
 
         Announcement announcement = new Announcement();
+        announcement.setImages(new ArrayList<>());
         announcement.setUserId(userId);
         announcement.setId(announceId);
-        when(repo.findById(announceId)).thenReturn(Optional.of(announcement));
-        when(responseMapper.toDto(announcement)).thenReturn(responseDto);
+        when(repo.findByIdWithImages(announceId)).thenReturn(Optional.of(announcement));
+        when(mapper.toResponseDto(announcement)).thenReturn(responseDto);
 
         service.update(dto, announceId, jwt);
         verify(repo, times(1)).save(announcement);
-        verify(requestMapper, times(1)).update(dto, announcement);
     }
 }
