@@ -1,342 +1,782 @@
 [
   {
-    "category_id": "ZRgPP9dBMm",
+    "category_id": "BwXzR4Zsc2",
     "parent_id": null,
-    "category_name": "Clothing"
+    "category_name": "Antiques & Art"
   },
   {
-    "category_id": "cptB1C1NSL",
-    "parent_id": "ZRgPP9dBMm",
-    "category_name": "Men"
+    "category_id": "9PndgDWRmp",
+    "parent_id": "BwXzR4Zsc2",
+    "category_name": "Antiques"
   },
   {
-    "category_id": "ElhqsRZDnP",
-    "parent_id": "cptB1C1NSL",
+    "category_id": "3VgTBEhjnd",
+    "parent_id": "BwXzR4Zsc2",
+    "category_name": "Art"
+  },
+  {
+    "category_id": "wBsZ0W8yqN",
+    "parent_id": "BwXzR4Zsc2",
+    "category_name": "Silver & Gold"
+  },
+  {
+    "category_id": "COnsN9aCtf",
+    "parent_id": "BwXzR4Zsc2",
+    "category_name": "Ceramics, Porcelain & Glass"
+  },
+  {
+    "category_id": "ILz8FbHT0u",
+    "parent_id": null,
+    "category_name": "Animals & Equipment"
+  },
+  {
+    "category_id": "2zpYbh2Fhh",
+    "parent_id": "ILz8FbHT0u",
+    "category_name": "Dogs & Equipment"
+  },
+  {
+    "category_id": "oE0qefUtVW",
+    "parent_id": "ILz8FbHT0u",
+    "category_name": "Cats & Equipment"
+  },
+  {
+    "category_id": "cUF0KbuQyl",
+    "parent_id": "ILz8FbHT0u",
+    "category_name": "Birds & Equipment"
+  },
+  {
+    "category_id": "pYyQNgmBNL",
+    "parent_id": "ILz8FbHT0u",
+    "category_name": "Aquariums & Fish"
+  },
+  {
+    "category_id": "aEcbWTUHW2",
+    "parent_id": "ILz8FbHT0u",
+    "category_name": "Equestrian & Riding Equipment"
+  },
+  {
+    "category_id": "JVXyXQf8j2",
+    "parent_id": null,
+    "category_name": "Electronics & Appliances"
+  },
+  {
+    "category_id": "cTF2DEjnpR",
+    "parent_id": "JVXyXQf8j2",
+    "category_name": "Computers & Accessories"
+  },
+  {
+    "category_id": "su4cjwGla3",
+    "parent_id": "cTF2DEjnpR",
+    "category_name": "Laptops"
+  },
+  {
+    "category_id": "NTdzpwyZYA",
+    "parent_id": "cTF2DEjnpR",
+    "category_name": "Desktops"
+  },
+  {
+    "category_id": "dCBoBGHab8",
+    "parent_id": "cTF2DEjnpR",
+    "category_name": "Monitors"
+  },
+  {
+    "category_id": "GU1GBkCSH5",
+    "parent_id": "cTF2DEjnpR",
+    "category_name": "PC Components"
+  },
+  {
+    "category_id": "hFDPoszepK",
+    "parent_id": "cTF2DEjnpR",
+    "category_name": "Networking"
+  },
+  {
+    "category_id": "pm0REkFyAB",
+    "parent_id": "JVXyXQf8j2",
+    "category_name": "Audio & Video"
+  },
+  {
+    "category_id": "NMxpnhsBYO",
+    "parent_id": "pm0REkFyAB",
+    "category_name": "TVs"
+  },
+  {
+    "category_id": "Odo3rbMVcd",
+    "parent_id": "pm0REkFyAB",
+    "category_name": "Speakers"
+  },
+  {
+    "category_id": "Ce0RNajw4a",
+    "parent_id": "pm0REkFyAB",
+    "category_name": "Headphones"
+  },
+  {
+    "category_id": "wtDwfooRvV",
+    "parent_id": "pm0REkFyAB",
+    "category_name": "Home Cinema"
+  },
+  {
+    "category_id": "XceLsvUlwr",
+    "parent_id": "JVXyXQf8j2",
+    "category_name": "Mobile Phones & Accessories"
+  },
+  {
+    "category_id": "xTJoSWbHVp",
+    "parent_id": "XceLsvUlwr",
+    "category_name": "Smartphones"
+  },
+  {
+    "category_id": "ak0ICWNqfR",
+    "parent_id": "XceLsvUlwr",
+    "category_name": "Smartwatches"
+  },
+  {
+    "category_id": "7XHcjtXLMi",
+    "parent_id": "XceLsvUlwr",
+    "category_name": "Cases & Covers"
+  },
+  {
+    "category_id": "0wbO658ztV",
+    "parent_id": "JVXyXQf8j2",
+    "category_name": "Home Appliances"
+  },
+  {
+    "category_id": "BbTCCMebtN",
+    "parent_id": "0wbO658ztV",
+    "category_name": "Washing Machines"
+  },
+  {
+    "category_id": "ZEUW6hNdVh",
+    "parent_id": "0wbO658ztV",
+    "category_name": "Refrigerators & Freezers"
+  },
+  {
+    "category_id": "uYQDdZcJv4",
+    "parent_id": "0wbO658ztV",
+    "category_name": "Dishwashers"
+  },
+  {
+    "category_id": "3kHnQs0ook",
+    "parent_id": "0wbO658ztV",
+    "category_name": "Coffee Machines"
+  },
+  {
+    "category_id": "7i2SrfjP1B",
+    "parent_id": "JVXyXQf8j2",
+    "category_name": "Gaming & Consoles"
+  },
+  {
+    "category_id": "gKV3xVK5wE",
+    "parent_id": "7i2SrfjP1B",
+    "category_name": "PlayStation"
+  },
+  {
+    "category_id": "Yt5v4yMuw6",
+    "parent_id": "7i2SrfjP1B",
+    "category_name": "Xbox"
+  },
+  {
+    "category_id": "PteveZQW22",
+    "parent_id": "7i2SrfjP1B",
+    "category_name": "Nintendo"
+  },
+  {
+    "category_id": "kmOXaILCaq",
+    "parent_id": "7i2SrfjP1B",
+    "category_name": "PC Gaming"
+  },
+  {
+    "category_id": "jBk2KDVaoI",
+    "parent_id": null,
+    "category_name": "Parents & Kids"
+  },
+  {
+    "category_id": "XQPfQpKEKz",
+    "parent_id": "jBk2KDVaoI",
+    "category_name": "Children's Clothing"
+  },
+  {
+    "category_id": "LbDn5HUt3J",
+    "parent_id": "XQPfQpKEKz",
+    "category_name": "Baby Clothes"
+  },
+  {
+    "category_id": "AKAisTjWp9",
+    "parent_id": "XQPfQpKEKz",
+    "category_name": "Boys' Clothes"
+  },
+  {
+    "category_id": "RqU7pHHT5V",
+    "parent_id": "XQPfQpKEKz",
+    "category_name": "Girls' Clothes"
+  },
+  {
+    "category_id": "BF33YdrgOt",
+    "parent_id": "XQPfQpKEKz",
     "category_name": "Outerwear"
   },
   {
-    "category_id": "LUzyWMYJpW",
-    "parent_id": "ElhqsRZDnP",
-    "category_name": "Jackets"
-  },
-  {
-    "category_id": "rDkHakOBKP",
-    "parent_id": "ElhqsRZDnP",
-    "category_name": "Coats"
-  },
-  {
-    "category_id": "1JARpJ2AUB",
-    "parent_id": "ElhqsRZDnP",
-    "category_name": "Windbreakers"
-  },
-  {
-    "category_id": "7G1VT2pSNO",
-    "parent_id": "cptB1C1NSL",
-    "category_name": "T-shirts & Shirts"
-  },
-  {
-    "category_id": "4q7L9FAU2S",
-    "parent_id": "7G1VT2pSNO",
-    "category_name": "T-shirts"
-  },
-  {
-    "category_id": "jpOC5zs3jx",
-    "parent_id": "7G1VT2pSNO",
-    "category_name": "Shirts"
-  },
-  {
-    "category_id": "96llWfTOAe",
-    "parent_id": "7G1VT2pSNO",
-    "category_name": "Polo shirts"
-  },
-  {
-    "category_id": "5OEvsF1R9k",
-    "parent_id": "cptB1C1NSL",
-    "category_name": "Pants & Jeans"
-  },
-  {
-    "category_id": "LNq3duGh9z",
-    "parent_id": "5OEvsF1R9k",
-    "category_name": "Jeans"
-  },
-  {
-    "category_id": "FThs77Cddn",
-    "parent_id": "5OEvsF1R9k",
-    "category_name": "Sweatpants"
-  },
-  {
-    "category_id": "t9eGFMIk7E",
-    "parent_id": "5OEvsF1R9k",
-    "category_name": "Dress pants"
-  },
-  {
-    "category_id": "cWQjuYWwc2",
-    "parent_id": "cptB1C1NSL",
-    "category_name": "Shoes"
-  },
-  {
-    "category_id": "2lYY81jKzR",
-    "parent_id": "cWQjuYWwc2",
-    "category_name": "Sneakers"
-  },
-  {
-    "category_id": "qGDd5H3yYd",
-    "parent_id": "cWQjuYWwc2",
-    "category_name": "Dress shoes"
-  },
-  {
-    "category_id": "ALbinxfzM1",
-    "parent_id": "cWQjuYWwc2",
-    "category_name": "Boots"
-  },
-  {
-    "category_id": "9eRGwnViia",
-    "parent_id": "cptB1C1NSL",
-    "category_name": "Accessories"
-  },
-  {
-    "category_id": "kAgBF7aSaO",
-    "parent_id": "9eRGwnViia",
-    "category_name": "Belts"
-  },
-  {
-    "category_id": "ygsDiv3hRm",
-    "parent_id": "9eRGwnViia",
-    "category_name": "Hats"
-  },
-  {
-    "category_id": "92pfQo6pA4",
-    "parent_id": "9eRGwnViia",
-    "category_name": "Scarves"
-  },
-  {
-    "category_id": "VfXndYon3e",
-    "parent_id": null,
-    "category_name": "Kids’ Products"
-  },
-  {
-    "category_id": "grl6dVnzM9",
-    "parent_id": "VfXndYon3e",
+    "category_id": "gHzbKt40IV",
+    "parent_id": "jBk2KDVaoI",
     "category_name": "Toys"
   },
   {
-    "category_id": "QrYfmqcnAR",
-    "parent_id": "grl6dVnzM9",
-    "category_name": "Educational"
+    "category_id": "zDPAs6A8j8",
+    "parent_id": "gHzbKt40IV",
+    "category_name": "Lego & Building Blocks"
   },
   {
-    "category_id": "hSaQDQkkE0",
-    "parent_id": "QrYfmqcnAR",
-    "category_name": "Building blocks"
+    "category_id": "8vC540O0vM",
+    "parent_id": "gHzbKt40IV",
+    "category_name": "Dolls & Accessories"
   },
   {
-    "category_id": "rSQyj88Pwe",
-    "parent_id": "QrYfmqcnAR",
-    "category_name": "Puzzles"
+    "category_id": "b4iZoIDLtY",
+    "parent_id": "gHzbKt40IV",
+    "category_name": "Board Games"
   },
   {
-    "category_id": "kkcmfophql",
-    "parent_id": "QrYfmqcnAR",
-    "category_name": "Learning games"
+    "category_id": "stUgkPcHsa",
+    "parent_id": "gHzbKt40IV",
+    "category_name": "Outdoor Toys"
   },
   {
-    "category_id": "V1F5kE5svr",
-    "parent_id": "ZRgPP9dBMm",
-    "category_name": "Women"
+    "category_id": "ibVS6opqwm",
+    "parent_id": "jBk2KDVaoI",
+    "category_name": "Baby Equipment"
   },
   {
-    "category_id": "bW6jRQ3h2S",
-    "parent_id": "V1F5kE5svr",
-    "category_name": "Dresses & Skirts"
-  },
-  {
-    "category_id": "6YcNNwgY0C",
-    "parent_id": "bW6jRQ3h2S",
-    "category_name": "Casual dresses"
-  },
-  {
-    "category_id": "dxs3ayh6Yl",
-    "parent_id": "bW6jRQ3h2S",
-    "category_name": "Evening dresses"
-  },
-  {
-    "category_id": "yZUeGC1bOn",
-    "parent_id": "bW6jRQ3h2S",
-    "category_name": "Skirts"
-  },
-  {
-    "category_id": "JyMpQJbCvy",
-    "parent_id": "V1F5kE5svr",
-    "category_name": "Blouses & Tops"
-  },
-  {
-    "category_id": "VT4rtTsGBj",
-    "parent_id": "JyMpQJbCvy",
-    "category_name": "Blouses"
-  },
-  {
-    "category_id": "vRQFNeVlsa",
-    "parent_id": "JyMpQJbCvy",
-    "category_name": "Tops"
-  },
-  {
-    "category_id": "OHHuEGKsUC",
-    "parent_id": "JyMpQJbCvy",
-    "category_name": "Shirts"
-  },
-  {
-    "category_id": "vu2lCeXKzk",
-    "parent_id": "V1F5kE5svr",
-    "category_name": "Pants & Leggings"
-  },
-  {
-    "category_id": "rg8LbH5ixZ",
-    "parent_id": "vu2lCeXKzk",
-    "category_name": "Dress pants"
-  },
-  {
-    "category_id": "ifEdBTIVDH",
-    "parent_id": "vu2lCeXKzk",
-    "category_name": "Leggings"
-  },
-  {
-    "category_id": "4J2BvKonKq",
-    "parent_id": "vu2lCeXKzk",
-    "category_name": "Jeans"
-  },
-  {
-    "category_id": "PlNwrAm6eM",
-    "parent_id": "VfXndYon3e",
-    "category_name": "Soft toys"
-  },
-  {
-    "category_id": "VK6hmDAvqP",
-    "parent_id": "PlNwrAm6eM",
-    "category_name": "Plush animals"
-  },
-  {
-    "category_id": "vidGAd8cIJ",
-    "parent_id": "PlNwrAm6eM",
-    "category_name": "Dolls"
-  },
-  {
-    "category_id": "NHWgNGSFB7",
-    "parent_id": "VfXndYon3e",
-    "category_name": "Electronic toys"
-  },
-  {
-    "category_id": "MTvnyKqtYJ",
-    "parent_id": "NHWgNGSFB7",
-    "category_name": "Robots"
-  },
-  {
-    "category_id": "wTXL9Ze5eF",
-    "parent_id": "NHWgNGSFB7",
-    "category_name": "Battery-powered cars"
-  },
-  {
-    "category_id": "SCG7WEYdG1",
-    "parent_id": "V1F5kE5svr",
-    "category_name": "Shoes"
-  },
-  {
-    "category_id": "cKnegrw5AO",
-    "parent_id": "SCG7WEYdG1",
-    "category_name": "Ankle boots"
-  },
-  {
-    "category_id": "smKxD5m9KI",
-    "parent_id": "SCG7WEYdG1",
-    "category_name": "Dress shoes"
-  },
-  {
-    "category_id": "ED6o8Zffqs",
-    "parent_id": "SCG7WEYdG1",
-    "category_name": "Sneakers"
-  },
-  {
-    "category_id": "2ZCPYTGxDj",
-    "parent_id": "V1F5kE5svr",
-    "category_name": "Accessories"
-  },
-  {
-    "category_id": "fZGBnnMx4e",
-    "parent_id": "2ZCPYTGxDj",
-    "category_name": "Bags"
-  },
-  {
-    "category_id": "6qsEYBv6eW",
-    "parent_id": "2ZCPYTGxDj",
-    "category_name": "Jewelry"
-  },
-  {
-    "category_id": "4lZKmYPbMk",
-    "parent_id": "2ZCPYTGxDj",
-    "category_name": "Scarves"
-  },
-  {
-    "category_id": "9BdK0PtwKc",
-    "parent_id": "VfXndYon3e",
-    "category_name": "Clothing"
-  },
-  {
-    "category_id": "H1THLG6H1Z",
-    "parent_id": "9BdK0PtwKc",
-    "category_name": "Boys"
-  },
-  {
-    "category_id": "XtDg7lwyJT",
-    "parent_id": "H1THLG6H1Z",
-    "category_name": "T-shirts"
-  },
-  {
-    "category_id": "KE29kkqLX6",
-    "parent_id": "H1THLG6H1Z",
-    "category_name": "Pants"
-  },
-  {
-    "category_id": "70EmSYGau7",
-    "parent_id": "H1THLG6H1Z",
-    "category_name": "Jackets"
-  },
-  {
-    "category_id": "YZj6RLht79",
-    "parent_id": "9BdK0PtwKc",
-    "category_name": "Girls"
-  },
-  {
-    "category_id": "3phIrCVLh7",
-    "parent_id": "YZj6RLht79",
-    "category_name": "Dresses"
-  },
-  {
-    "category_id": "i6jT5ByjBF",
-    "parent_id": "YZj6RLht79",
-    "category_name": "Skirts"
-  },
-  {
-    "category_id": "RHD7qDmzgU",
-    "parent_id": "YZj6RLht79",
-    "category_name": "Blouses"
-  },
-  {
-    "category_id": "pJCLIx2r8E",
-    "parent_id": "VfXndYon3e",
-    "category_name": "Strollers & Accessories"
-  },
-  {
-    "category_id": "8kzM0APnBF",
-    "parent_id": "pJCLIx2r8E",
+    "category_id": "T5EPvodMRC",
+    "parent_id": "ibVS6opqwm",
     "category_name": "Strollers"
   },
   {
-    "category_id": "1AV4avrH6j",
-    "parent_id": "pJCLIx2r8E",
-    "category_name": "Slings & Carriers"
+    "category_id": "UUppMEk7nQ",
+    "parent_id": "ibVS6opqwm",
+    "category_name": "Car Seats"
   },
   {
-    "category_id": "dow9fD3WF6",
-    "parent_id": "pJCLIx2r8E",
-    "category_name": "Covers & Rain protection"
+    "category_id": "DemrinlLfE",
+    "parent_id": "ibVS6opqwm",
+    "category_name": "High Chairs"
+  },
+  {
+    "category_id": "LDzAU8Tqsf",
+    "parent_id": "ibVS6opqwm",
+    "category_name": "Baby Monitors"
+  },
+  {
+    "category_id": "HwIOMJFsEK",
+    "parent_id": null,
+    "category_name": "Clothing, Cosmetics & Accessories"
+  },
+  {
+    "category_id": "6oyYFzhyWt",
+    "parent_id": "HwIOMJFsEK",
+    "category_name": "Women's Clothing"
+  },
+  {
+    "category_id": "PoeyrvOo2M",
+    "parent_id": "6oyYFzhyWt",
+    "category_name": "Dresses"
+  },
+  {
+    "category_id": "RubRMAuOdS",
+    "parent_id": "6oyYFzhyWt",
+    "category_name": "Sweaters"
+  },
+  {
+    "category_id": "3lludtSnHu",
+    "parent_id": "6oyYFzhyWt",
+    "category_name": "Pants & Jeans"
+  },
+  {
+    "category_id": "0pBBBL1vLp",
+    "parent_id": "6oyYFzhyWt",
+    "category_name": "Outerwear"
+  },
+  {
+    "category_id": "HAD0bJtJtE",
+    "parent_id": "HwIOMJFsEK",
+    "category_name": "Men's Clothing"
+  },
+  {
+    "category_id": "w5VUJg2v0g",
+    "parent_id": "HAD0bJtJtE",
+    "category_name": "Shirts"
+  },
+  {
+    "category_id": "zhkS88gUFJ",
+    "parent_id": "HAD0bJtJtE",
+    "category_name": "T-shirts"
+  },
+  {
+    "category_id": "Ap3zW6QzOa",
+    "parent_id": "HAD0bJtJtE",
+    "category_name": "Pants & Jeans"
+  },
+  {
+    "category_id": "In1gebqqaY",
+    "parent_id": "HAD0bJtJtE",
+    "category_name": "Suits & Blazers"
+  },
+  {
+    "category_id": "txdyf98LTG",
+    "parent_id": "HAD0bJtJtE",
+    "category_name": "Outerwear"
+  },
+  {
+    "category_id": "sA55C3vI01",
+    "parent_id": "HwIOMJFsEK",
+    "category_name": "Shoes"
+  },
+  {
+    "category_id": "mdEsaxQDB4",
+    "parent_id": "sA55C3vI01",
+    "category_name": "Women's Shoes"
+  },
+  {
+    "category_id": "wFXvB6U3ah",
+    "parent_id": "sA55C3vI01",
+    "category_name": "Men's Shoes"
+  },
+  {
+    "category_id": "QCNhqthMsr",
+    "parent_id": "sA55C3vI01",
+    "category_name": "Sneakers"
+  },
+  {
+    "category_id": "gizIUvtu6w",
+    "parent_id": "sA55C3vI01",
+    "category_name": "Boots"
+  },
+  {
+    "category_id": "x8BfpLm8Hc",
+    "parent_id": "HwIOMJFsEK",
+    "category_name": "Bags & Accessories"
+  },
+  {
+    "category_id": "QzfKAFuLqp",
+    "parent_id": "x8BfpLm8Hc",
+    "category_name": "Bags & Wallets"
+  },
+  {
+    "category_id": "QP5VowkmAZ",
+    "parent_id": "x8BfpLm8Hc",
+    "category_name": "Watches"
+  },
+  {
+    "category_id": "Hyl5U1GWeb",
+    "parent_id": "x8BfpLm8Hc",
+    "category_name": "Jewelry"
+  },
+  {
+    "category_id": "NngRAUtvBh",
+    "parent_id": "x8BfpLm8Hc",
+    "category_name": "Sunglasses"
+  },
+  {
+    "category_id": "sVFHwnw1Yu",
+    "parent_id": "HwIOMJFsEK",
+    "category_name": "Beauty & Cosmetics"
+  },
+  {
+    "category_id": "0edL77t2EB",
+    "parent_id": "sVFHwnw1Yu",
+    "category_name": "Makeup"
+  },
+  {
+    "category_id": "SDepJ8Jgcf",
+    "parent_id": "sVFHwnw1Yu",
+    "category_name": "Skincare"
+  },
+  {
+    "category_id": "3vQX61WaMm",
+    "parent_id": "sVFHwnw1Yu",
+    "category_name": "Perfume"
+  },
+  {
+    "category_id": "beoFUkqfhL",
+    "parent_id": null,
+    "category_name": "Furniture & Interior"
+  },
+  {
+    "category_id": "D3gqUlvMEy",
+    "parent_id": "beoFUkqfhL",
+    "category_name": "Living Room Furniture"
+  },
+  {
+    "category_id": "niwyJ1D21t",
+    "parent_id": "D3gqUlvMEy",
+    "category_name": "Sofas"
+  },
+  {
+    "category_id": "umSxf65cuB",
+    "parent_id": "D3gqUlvMEy",
+    "category_name": "Chairs & Armchairs"
+  },
+  {
+    "category_id": "k64bCsbVAh",
+    "parent_id": "D3gqUlvMEy",
+    "category_name": "Coffee Tables"
+  },
+  {
+    "category_id": "LNepCCEvfV",
+    "parent_id": "D3gqUlvMEy",
+    "category_name": "TV Stands"
+  },
+  {
+    "category_id": "fRjxNOfj2A",
+    "parent_id": "beoFUkqfhL",
+    "category_name": "Bedroom Furniture"
+  },
+  {
+    "category_id": "lfgJOxuw06",
+    "parent_id": "fRjxNOfj2A",
+    "category_name": "Beds & Mattresses"
+  },
+  {
+    "category_id": "YPh7RExRwI",
+    "parent_id": "fRjxNOfj2A",
+    "category_name": "Wardrobes"
+  },
+  {
+    "category_id": "PvcC8lwYnW",
+    "parent_id": "fRjxNOfj2A",
+    "category_name": "Nightstands"
+  },
+  {
+    "category_id": "LaSPasgnsP",
+    "parent_id": "beoFUkqfhL",
+    "category_name": "Dining Room Furniture"
+  },
+  {
+    "category_id": "xOLlfIYlyJ",
+    "parent_id": "LaSPasgnsP",
+    "category_name": "Dining Tables"
+  },
+  {
+    "category_id": "b6Owa5ilzW",
+    "parent_id": "LaSPasgnsP",
+    "category_name": "Dining Chairs"
+  },
+  {
+    "category_id": "rSti1pKdUQ",
+    "parent_id": "LaSPasgnsP",
+    "category_name": "Sideboards"
+  },
+  {
+    "category_id": "OUFYTbWL8r",
+    "parent_id": "beoFUkqfhL",
+    "category_name": "Lighting"
+  },
+  {
+    "category_id": "Gu7nIB8AmL",
+    "parent_id": "OUFYTbWL8r",
+    "category_name": "Ceiling Lights"
+  },
+  {
+    "category_id": "hGbeEaAhJe",
+    "parent_id": "OUFYTbWL8r",
+    "category_name": "Floor Lamps"
+  },
+  {
+    "category_id": "C32c2MRgsf",
+    "parent_id": "OUFYTbWL8r",
+    "category_name": "Table Lamps"
+  },
+  {
+    "category_id": "o8sJvb20a3",
+    "parent_id": "beoFUkqfhL",
+    "category_name": "Decor & Accessories"
+  },
+  {
+    "category_id": "UoRC7Cwmfz",
+    "parent_id": "o8sJvb20a3",
+    "category_name": "Rugs"
+  },
+  {
+    "category_id": "tQNFzWNAmw",
+    "parent_id": "o8sJvb20a3",
+    "category_name": "Mirrors"
+  },
+  {
+    "category_id": "SZmNJtiiQ8",
+    "parent_id": "o8sJvb20a3",
+    "category_name": "Posters & Pictures"
+  },
+  {
+    "category_id": "ytD2fizii7",
+    "parent_id": null,
+    "category_name": "Garden, Renovation & House"
+  },
+  {
+    "category_id": "ifDHaW6rvx",
+    "parent_id": "ytD2fizii7",
+    "category_name": "Garden & Outdoor Areas"
+  },
+  {
+    "category_id": "VX6bTWe3g1",
+    "parent_id": "ifDHaW6rvx",
+    "category_name": "Garden Furniture"
+  },
+  {
+    "category_id": "5mMxEobXLU",
+    "parent_id": "ifDHaW6rvx",
+    "category_name": "BBQ & Grills"
+  },
+  {
+    "category_id": "Q9eftXMBkA",
+    "parent_id": "ifDHaW6rvx",
+    "category_name": "Lawnmowers"
+  },
+  {
+    "category_id": "S23wd9fgx7",
+    "parent_id": "ifDHaW6rvx",
+    "category_name": "Plants & Seeds"
+  },
+  {
+    "category_id": "2IIaGS8oNY",
+    "parent_id": "ytD2fizii7",
+    "category_name": "Tools & Machinery"
+  },
+  {
+    "category_id": "OgNbB2Colh",
+    "parent_id": "2IIaGS8oNY",
+    "category_name": "Power Tools"
+  },
+  {
+    "category_id": "zAK1xktq7T",
+    "parent_id": "2IIaGS8oNY",
+    "category_name": "Hand Tools"
+  },
+  {
+    "category_id": "rQQQ9lDNtt",
+    "parent_id": "2IIaGS8oNY",
+    "category_name": "Building Materials"
+  },
+  {
+    "category_id": "dbfbfoZQwX",
+    "parent_id": "ytD2fizii7",
+    "category_name": "Heating & Ventilation"
+  },
+  {
+    "category_id": "u8BF6GXNiL",
+    "parent_id": "dbfbfoZQwX",
+    "category_name": "Fireplaces & Stoves"
+  },
+  {
+    "category_id": "Y9JueKKYtQ",
+    "parent_id": "dbfbfoZQwX",
+    "category_name": "Heat Pumps"
+  },
+  {
+    "category_id": "2in3mliklD",
+    "parent_id": "dbfbfoZQwX",
+    "category_name": "Air Purifiers"
+  },
+  {
+    "category_id": "eZAMDjXoYL",
+    "parent_id": null,
+    "category_name": "Sports & Outdoors"
+  },
+  {
+    "category_id": "GflyJVYNT2",
+    "parent_id": "eZAMDjXoYL",
+    "category_name": "Winter Sports"
+  },
+  {
+    "category_id": "QnY10t6hB3",
+    "parent_id": "GflyJVYNT2",
+    "category_name": "Cross-country Skiing"
+  },
+  {
+    "category_id": "zUEzKUQtsO",
+    "parent_id": "GflyJVYNT2",
+    "category_name": "Alpine Skiing"
+  },
+  {
+    "category_id": "GtaNDjygkK",
+    "parent_id": "GflyJVYNT2",
+    "category_name": "Snowboards"
+  },
+  {
+    "category_id": "POsYN1Yyeb",
+    "parent_id": "GflyJVYNT2",
+    "category_name": "Ice Skates"
+  },
+  {
+    "category_id": "ZHCdWu4xKZ",
+    "parent_id": "eZAMDjXoYL",
+    "category_name": "Cycling"
+  },
+  {
+    "category_id": "U2rYOZa1f6",
+    "parent_id": "ZHCdWu4xKZ",
+    "category_name": "Mountain Bikes"
+  },
+  {
+    "category_id": "Ul9zMAMtYy",
+    "parent_id": "ZHCdWu4xKZ",
+    "category_name": "Road Bikes"
+  },
+  {
+    "category_id": "gAWNYUBkU2",
+    "parent_id": "ZHCdWu4xKZ",
+    "category_name": "Electric Bikes"
+  },
+  {
+    "category_id": "StGQuxTVWP",
+    "parent_id": "ZHCdWu4xKZ",
+    "category_name": "Bicycle Accessories"
+  },
+  {
+    "category_id": "GAfnVVPJNT",
+    "parent_id": "eZAMDjXoYL",
+    "category_name": "Outdoor & Camping"
+  },
+  {
+    "category_id": "DjOjWLJKxD",
+    "parent_id": "GAfnVVPJNT",
+    "category_name": "Tents"
+  },
+  {
+    "category_id": "oIjQfvNVLr",
+    "parent_id": "GAfnVVPJNT",
+    "category_name": "Sleeping Bags"
+  },
+  {
+    "category_id": "JZDBOvNf8z",
+    "parent_id": "GAfnVVPJNT",
+    "category_name": "Backpacks"
+  },
+  {
+    "category_id": "rfE1Dy59jz",
+    "parent_id": "GAfnVVPJNT",
+    "category_name": "Fishing Equipment"
+  },
+  {
+    "category_id": "henjnKGMSz",
+    "parent_id": "eZAMDjXoYL",
+    "category_name": "Water Sports"
+  },
+  {
+    "category_id": "5RIIb3ebXH",
+    "parent_id": "henjnKGMSz",
+    "category_name": "Kayaks & Canoes"
+  },
+  {
+    "category_id": "nioPoBxf2z",
+    "parent_id": "henjnKGMSz",
+    "category_name": "SUP Boards"
+  },
+  {
+    "category_id": "t36aTFp03m",
+    "parent_id": "henjnKGMSz",
+    "category_name": "Diving Equipment"
+  },
+  {
+    "category_id": "EgUYqG2gqq",
+    "parent_id": "eZAMDjXoYL",
+    "category_name": "Exercise Equipment"
+  },
+  {
+    "category_id": "FopIp6XEgc",
+    "parent_id": "EgUYqG2gqq",
+    "category_name": "Treadmills"
+  },
+  {
+    "category_id": "0TUgBO3eKV",
+    "parent_id": "EgUYqG2gqq",
+    "category_name": "Weights"
+  },
+  {
+    "category_id": "TW46lcfX1q",
+    "parent_id": "EgUYqG2gqq",
+    "category_name": "Exercise Bikes"
+  },
+  {
+    "category_id": "B8g4frLRvW",
+    "parent_id": null,
+    "category_name": "Leisure, Hobby & Entertainment"
+  },
+  {
+    "category_id": "pyvOuA1kr1",
+    "parent_id": "B8g4frLRvW",
+    "category_name": "Musical Instruments"
+  },
+  {
+    "category_id": "P2S6Ws6VF5",
+    "parent_id": "pyvOuA1kr1",
+    "category_name": "Guitars"
+  },
+  {
+    "category_id": "BU3cohzCj3",
+    "parent_id": "pyvOuA1kr1",
+    "category_name": "Pianos & Keyboards"
+  },
+  {
+    "category_id": "TGtBSetm49",
+    "parent_id": "pyvOuA1kr1",
+    "category_name": "Drums & Percussion"
+  },
+  {
+    "category_id": "RFV2zK2zpB",
+    "parent_id": "B8g4frLRvW",
+    "category_name": "Books & Magazines"
+  },
+  {
+    "category_id": "k0S5EMHcCU",
+    "parent_id": "RFV2zK2zpB",
+    "category_name": "Fiction"
+  },
+  {
+    "category_id": "gGjosnXjnR",
+    "parent_id": "RFV2zK2zpB",
+    "category_name": "Non-fiction"
+  },
+  {
+    "category_id": "vFkrZv7LHV",
+    "parent_id": "RFV2zK2zpB",
+    "category_name": "Children's Books"
+  },
+  {
+    "category_id": "n48IJW4ulh",
+    "parent_id": "B8g4frLRvW",
+    "category_name": "Movies & Music"
+  },
+  {
+    "category_id": "mCLTlGxNCK",
+    "parent_id": "n48IJW4ulh",
+    "category_name": "Vinyl Records"
+  },
+  {
+    "category_id": "ZTpXLyZCFj",
+    "parent_id": "n48IJW4ulh",
+    "category_name": "CDs"
+  },
+  {
+    "category_id": "W06TfMKUdA",
+    "parent_id": "n48IJW4ulh",
+    "category_name": "DVDs & Blu-ray"
+  },
+  {
+    "category_id": "NT6vAfWqSW",
+    "parent_id": "B8g4frLRvW",
+    "category_name": "Collectibles"
+  },
+  {
+    "category_id": "Hdh5n1iK1p",
+    "parent_id": "NT6vAfWqSW",
+    "category_name": "Stamps"
+  },
+  {
+    "category_id": "PVvLCUw0UZ",
+    "parent_id": "NT6vAfWqSW",
+    "category_name": "Coins"
+  },
+  {
+    "category_id": "34LoPkK223",
+    "parent_id": "NT6vAfWqSW",
+    "category_name": "Comics"
   }
 ]
