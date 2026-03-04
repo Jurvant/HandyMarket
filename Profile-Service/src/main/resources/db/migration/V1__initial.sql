@@ -1,5 +1,9 @@
 CREATE TABLE IF NOT EXISTS user_profiles(
     user_id UUID NOT NULL PRIMARY KEY,
-    avatar_url VARCHAR,
+    username VARCHAR(32) NOT NULL UNIQUE,
+    email VARCHAR(255) NOT NULL UNIQUE,
+    first_name VARCHAR(32),
+    last_name VARCHAR(32),
+    avatar_url TEXT,
     created_at TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
