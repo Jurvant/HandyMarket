@@ -275,9 +275,9 @@
                 "query-clients",
                 "view-users",
                 "manage-realm",
-                "manage-clients",
                 "view-events",
                 "view-identity-providers",
+                "manage-clients",
                 "view-clients",
                 "view-authorization",
                 "manage-authorization",
@@ -489,6 +489,13 @@
       "realmRoles": [
         "default-roles-handy-market"
       ],
+      "clientRoles": {
+        "realm-management": [
+          "view-users",
+          "manage-users",
+          "query-users"
+        ]
+      },
       "notBefore": 0,
       "groups": []
     }
