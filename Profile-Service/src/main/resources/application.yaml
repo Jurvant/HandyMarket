@@ -1,0 +1,7 @@
+app:
+  profile-service:
+    keycloak:
+      server-url: http://localhost:9090
+      realm: handy-market
+      client-id: profile-service
+      client-secret: 74NeM9n2U4d8e7JH69qUTkOd3Pyp8OZE
