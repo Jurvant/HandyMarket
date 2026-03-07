@@ -3,6 +3,8 @@ package ilya.pon.profile.service;
 import ilya.pon.profile.configuration.properties.KeycloakProperties;
 import ilya.pon.profile.domain.UserProfile;
 import ilya.pon.profile.dto.RegisterDto;
+import ilya.pon.profile.exception.ExistingUniqueFieldException;
+import ilya.pon.profile.exception.KeycloakServiceErrorException;
 import ilya.pon.profile.mapper.RegisterProfileMapper;
 import ilya.pon.profile.repository.UserProfileRepository;
 import jakarta.validation.Valid;
@@ -40,9 +42,9 @@ public class RegisterService {
                 if (response.getStatus() == 201) {
                     keycloakId = CreatedResponseUtil.getCreatedId(response);
                 } else if (response.getStatus() == 409) {
-                    throw new RuntimeException("User with this email or username already exists");
+                    throw new ExistingUniqueFieldException("User with this email or username already exists");
                 } else {
-                    throw new RuntimeException("Keycloak error: " + response.getStatus());
+                    throw new KeycloakServiceErrorException("Keycloak error: " + response.getStatus());
                 }
             }
             UserProfile userProfile = registerMapper.toEntity(dto);

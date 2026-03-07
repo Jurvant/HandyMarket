@@ -1,7 +1,7 @@
 package ilya.pon.profile.service;
 
 import ilya.pon.profile.configuration.properties.KeycloakProperties;
-import ilya.pon.profile.custom.exception.AuthenticationFailedException;
+import ilya.pon.profile.exception.AuthenticationFailedException;
 import ilya.pon.profile.dto.LoginDto;
 import ilya.pon.profile.dto.ResponseLoginDto;
 import lombok.AllArgsConstructor;

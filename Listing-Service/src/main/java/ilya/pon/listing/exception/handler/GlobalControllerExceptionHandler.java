@@ -55,5 +55,4 @@ public class GlobalControllerExceptionHandler {
                 .collect(java.util.stream.Collectors.joining(", "));
         return new ResponseEntity<>(new ErrorDetailsDto("VALIDATION_ERROR", message), HttpStatus.BAD_REQUEST);
     }
-
 }
