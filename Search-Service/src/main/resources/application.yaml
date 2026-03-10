@@ -1,0 +1,4 @@
+app:
+  search-service:
+    elastic-search:
+      url: localhost:9200

@@ -51,7 +51,7 @@ public class Announcement {
     @CreatedDate
     private LocalDateTime createdAt;
 
-    @Enumerated(EnumType.ORDINAL)
+    @Enumerated(EnumType.STRING)
     @Column(name = "status")
     private Status status = Status.ACTIVE;
 
