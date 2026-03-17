@@ -11,6 +11,7 @@ import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
 import jakarta.ws.rs.core.Response;
 import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import org.jspecify.annotations.NonNull;
 import org.keycloak.admin.client.CreatedResponseUtil;
 import org.keycloak.admin.client.Keycloak;
@@ -27,6 +28,7 @@ import java.util.UUID;
 @Validated
 @AllArgsConstructor
 public class RegisterService {
+
     private final UserProfileRepository userProfileRepository;
     private final Keycloak keycloak;
     private final KeycloakProperties keycloakProperties;

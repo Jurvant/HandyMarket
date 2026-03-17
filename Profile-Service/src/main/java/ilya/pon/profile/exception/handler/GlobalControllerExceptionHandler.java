@@ -29,6 +29,4 @@ public class GlobalControllerExceptionHandler {
         ErrorDetailsDto error = new ErrorDetailsDto("EXISTING_UNIQUE_DATA", e.getMessage());
         return new ResponseEntity<>(error, HttpStatus.UNAUTHORIZED);
     }
-
-
 }
