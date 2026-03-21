@@ -1,22 +1,21 @@
 package ilya.pon.search.document;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import lombok.Data;
 import org.springframework.data.annotation.Id;
-import org.springframework.data.elasticsearch.annotations.Document;
-import org.springframework.data.elasticsearch.annotations.Field;
-import org.springframework.data.elasticsearch.annotations.FieldType;
-import org.springframework.data.elasticsearch.annotations.Setting;
+import org.springframework.data.elasticsearch.annotations.*;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.List;
-import java.util.UUID;
 
 @Document(indexName = "announcement")
 @Setting(settingPath = "static/es-settings.json")
+@Data
 public class Announcement {
     @Id
     @Field(type = FieldType.Keyword)
-    private UUID id;
+    private String id;
 
     @Field(type = FieldType.Text)
     private String title;
@@ -36,7 +35,8 @@ public class Announcement {
     @Field(type = FieldType.Keyword)
     private List<String> categoryIds;
 
-    @Field(type = FieldType.Date)
+    @Field(type = FieldType.Date, format = DateFormat.date_hour_minute_second)
+    @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss")
     private LocalDateTime createdAt;
 
     @Field(type = FieldType.Keyword)
